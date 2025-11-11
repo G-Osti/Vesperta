@@ -1,0 +1,185 @@
+[gd_scene load_steps=20 format=3 uid="uid://dcnbbtm4u6gje"]
+
+[ext_resource type="Texture2D" uid="uid://d0jribtv0b0fq" path="res://assets/sprites/Texturas/Terra.png" id="1_lwu8s"]
+[ext_resource type="Texture2D" uid="uid://dx47bmdsj8aci" path="res://assets/sprites/Texturas/Grama.png" id="2_p0mb1"]
+[ext_resource type="Texture2D" uid="uid://cqx07hmch2fdp" path="res://assets/sprites/Texturas/Areia.png" id="3_6nt4a"]
+[ext_resource type="Texture2D" uid="uid://bdfdmmyet2hev" path="res://assets/sprites/Texturas/Agua.png" id="4_21lga"]
+
+[sub_resource type="Shader" id="Shader_eaiwi"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.4.1.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_disabled, unshaded, ambient_light_disabled, fog_disabled;
+
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color, filter_nearest, repeat_disable;
+uniform float alpha_scissor_threshold : hint_range(0.0, 1.0, 0.001);
+uniform ivec2 albedo_texture_size;
+
+uniform float depth_offset_factor = 0.1;
+
+void vertex() {
+	float offset = (NODE_POSITION_WORLD.y) * depth_offset_factor;
+	VERTEX.z += offset;
+
+	// Billboard Mode: Y-Billboard
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
+			vec4(normalize(cross(vec3(0.0, 1.0, 0.0), MAIN_CAM_INV_VIEW_MATRIX[2].xyz)), 0.0),
+			vec4(0.0, 1.0, 0.0, 0.0),
+			vec4(normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
+			MODEL_MATRIX[3]);
+	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
+}
+
+void fragment() {
+	vec2 base_uv = UV;
+
+	vec4 albedo_tex = texture(texture_albedo, base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+
+	ALPHA *= albedo.a * albedo_tex.a;
+	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
+}
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_13ty8"]
+load_path = "res://.godot/imported/Pedra.png-a1ec22d9b348f26f556da36eefbb454c.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uf5nr"]
+render_priority = 0
+shader = SubResource("Shader_eaiwi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_13ty8")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/albedo_texture_size = Vector2i(32, 32)
+shader_parameter/depth_offset_factor = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_p0mb1"]
+material = SubResource("ShaderMaterial_uf5nr")
+size = Vector2(1.414, 1.414)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0cl7"]
+margin = 0.01
+size = Vector3(0.99, 0.49, 0.99)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxetk"]
+render_priority = 0
+shader = SubResource("Shader_eaiwi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_lwu8s")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/albedo_texture_size = Vector2i(32, 32)
+shader_parameter/depth_offset_factor = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_6nt4a"]
+material = SubResource("ShaderMaterial_fxetk")
+size = Vector2(1.414, 1.414)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21lga"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dbh0g"]
+material = SubResource("StandardMaterial3D_21lga")
+size = Vector3(0.999, 0.418, 0.999)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkpk0"]
+render_priority = 0
+shader = SubResource("Shader_eaiwi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_p0mb1")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/albedo_texture_size = Vector2i(32, 32)
+shader_parameter/depth_offset_factor = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_21lga"]
+material = SubResource("ShaderMaterial_kkpk0")
+size = Vector2(1.414, 1.414)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqk3s"]
+render_priority = 0
+shader = SubResource("Shader_eaiwi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("3_6nt4a")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/albedo_texture_size = Vector2i(32, 32)
+shader_parameter/depth_offset_factor = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_dbh0g"]
+material = SubResource("ShaderMaterial_qqk3s")
+size = Vector2(1.414, 1.414)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svgff"]
+render_priority = 0
+shader = SubResource("Shader_eaiwi")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("4_21lga")
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/albedo_texture_size = Vector2i(32, 32)
+shader_parameter/depth_offset_factor = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_tuj8g"]
+material = SubResource("ShaderMaterial_svgff")
+size = Vector2(1.414, 1.414)
+
+[node name="Tiles" type="Node3D"]
+
+[node name="Pedra" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_p0mb1")
+
+[node name="Area3D" type="Area3D" parent="Pedra"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pedra/Area3D"]
+shape = SubResource("BoxShape3D_j0cl7")
+
+[node name="Terra" type="MeshInstance3D" parent="."]
+visible = false
+layers = 2
+mesh = SubResource("QuadMesh_6nt4a")
+
+[node name="Bloco" type="MeshInstance3D" parent="Terra"]
+mesh = SubResource("BoxMesh_dbh0g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Terra/Bloco"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terra/Bloco/StaticBody3D"]
+shape = SubResource("BoxShape3D_j0cl7")
+
+[node name="Grama" type="MeshInstance3D" parent="."]
+visible = false
+layers = 2
+mesh = SubResource("QuadMesh_21lga")
+
+[node name="Bloco" type="MeshInstance3D" parent="Grama"]
+mesh = SubResource("BoxMesh_dbh0g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grama/Bloco"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grama/Bloco/StaticBody3D"]
+shape = SubResource("BoxShape3D_j0cl7")
+
+[node name="Areia" type="MeshInstance3D" parent="."]
+visible = false
+layers = 2
+mesh = SubResource("QuadMesh_dbh0g")
+
+[node name="Bloco" type="MeshInstance3D" parent="Areia"]
+mesh = SubResource("BoxMesh_dbh0g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Areia/Bloco"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areia/Bloco/StaticBody3D"]
+shape = SubResource("BoxShape3D_j0cl7")
+
+[node name="Agua" type="MeshInstance3D" parent="."]
+visible = false
+layers = 2
+mesh = SubResource("QuadMesh_tuj8g")
+
+[node name="Bloco" type="MeshInstance3D" parent="Agua"]
+mesh = SubResource("BoxMesh_dbh0g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Agua/Bloco"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Agua/Bloco/StaticBody3D"]
+shape = SubResource("BoxShape3D_j0cl7")

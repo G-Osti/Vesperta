@@ -1,0 +1,144 @@
+[gd_scene load_steps=20 format=4 uid="uid://gf7onp0fxua8"]
+
+[ext_resource type="Texture2D" uid="uid://btwa0jqiqyr76" path="res://assets/sprites/menus/CharSel.png" id="1_l6hb6"]
+[ext_resource type="Script" uid="uid://bq1rr1l607hed" path="res://scripts/entity_sel.gd" id="2_l6hb6"]
+[ext_resource type="Texture2D" uid="uid://d321ci5yyqc5a" path="res://assets/sprites/Entidades/Humanoide/Cabeça.png" id="4_p631m"]
+[ext_resource type="Material" uid="uid://colf7r0jv1lcy" path="res://assets/cenas/SpriteColor.tres" id="4_s83qw"]
+[ext_resource type="Texture2D" uid="uid://107n0kugfl4k" path="res://assets/sprites/menus/BarTurn.png" id="5_l6hb6"]
+[ext_resource type="Texture2D" uid="uid://7mmkljhrm0lu" path="res://assets/sprites/Entidades/Humanoide/Braços.png" id="5_s83qw"]
+[ext_resource type="Shader" uid="uid://daodtt32gcds7" path="res://assets/cenas/SpriteColor.gdshader" id="6_g43mm"]
+[ext_resource type="Texture2D" uid="uid://w4syajksp6fy" path="res://assets/sprites/Entidades/Humanoide/Tronco.png" id="6_n7jy7"]
+[ext_resource type="Texture2D" uid="uid://7fiev6ln8wte" path="res://assets/sprites/Entidades/Humanoide/Pernas.png" id="7_g43mm"]
+[ext_resource type="Texture2D" uid="uid://bd8tnbrynbgli" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Mangas0.png" id="8_k8su8"]
+[ext_resource type="Texture2D" uid="uid://d14xe5u74nd8b" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Camisa0.png" id="9_gjjy3"]
+[ext_resource type="Texture2D" uid="uid://dyceghh0d7x0x" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Botas0.png" id="10_un4x5"]
+[ext_resource type="Texture2D" uid="uid://h867tli67trv" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Cabelo0.png" id="11_sumoh"]
+[ext_resource type="Texture2D" uid="uid://dv7bikstlde5x" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Face0.png" id="12_g2sdp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dt7kc"]
+viewport_path = NodePath("Avatar")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8su8"]
+shader = ExtResource("6_g43mm")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gjjy3"]
+shader = ExtResource("6_g43mm")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_un4x5"]
+shader = ExtResource("6_g43mm")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sumoh"]
+shader = ExtResource("6_g43mm")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1)
+
+[node name="EntitySel" type="TextureButton"]
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+texture_filter = 1
+offset_right = 25.0
+offset_bottom = 23.0
+pivot_offset = Vector2(0, 13)
+texture_normal = ExtResource("1_l6hb6")
+script = ExtResource("2_l6hb6")
+
+[node name="Retrato" type="TextureRect" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 1
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 19.0
+offset_bottom = 19.0
+texture = SubResource("ViewportTexture_dt7kc")
+expand_mode = 4
+
+[node name="Vida" type="TextureProgressBar" parent="."]
+self_modulate = Color(0.372549, 0.870588, 0.235294, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -4.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 19.0
+grow_horizontal = 0
+max_value = 17.0
+value = 17.0
+fill_mode = 3
+texture_progress = ExtResource("5_l6hb6")
+
+[node name="Avatar" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(16, 16)
+
+[node name="Offset" type="Node2D" parent="Avatar"]
+texture_filter = 1
+position = Vector2(8, 12)
+
+[node name="Head" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 3
+z_index = 2
+material = ExtResource("4_s83qw")
+texture = ExtResource("4_p631m")
+hframes = 10
+
+[node name="Arms" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 2
+z_index = 2
+material = SubResource("ShaderMaterial_k8su8")
+texture = ExtResource("5_s83qw")
+hframes = 10
+
+[node name="Torso" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 1
+z_index = 1
+material = SubResource("ShaderMaterial_gjjy3")
+texture = ExtResource("6_n7jy7")
+hframes = 10
+
+[node name="Legs" type="Sprite2D" parent="Avatar/Offset"]
+material = SubResource("ShaderMaterial_un4x5")
+texture = ExtResource("7_g43mm")
+hframes = 10
+
+[node name="Sleeves" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 3
+z_index = 2
+material = SubResource("ShaderMaterial_sumoh")
+texture = ExtResource("8_k8su8")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 2
+z_index = 1
+material = SubResource("ShaderMaterial_sumoh")
+texture = ExtResource("9_gjjy3")
+hframes = 10
+
+[node name="Boots" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 1
+material = SubResource("ShaderMaterial_sumoh")
+texture = ExtResource("10_un4x5")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="Avatar/Offset"]
+z_index = 3
+material = SubResource("ShaderMaterial_sumoh")
+texture = ExtResource("11_sumoh")
+hframes = 10
+
+[node name="Face" type="Sprite2D" parent="Avatar/Offset"]
+z_index = 3
+material = SubResource("ShaderMaterial_sumoh")
+texture = ExtResource("12_g2sdp")
+hframes = 4
+
+[node name="Hat" type="Sprite2D" parent="Avatar/Offset"]
+material = SubResource("ShaderMaterial_sumoh")
+hframes = 10
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

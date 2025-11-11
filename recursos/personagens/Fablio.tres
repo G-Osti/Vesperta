@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://3jj1bd4d8tt"]
+
+[ext_resource type="Resource" uid="uid://vv2xup7s81qs" path="res://recursos/itens/Arco.tres" id="1_pr5ny"]
+[ext_resource type="Script" uid="uid://dlj8ig8c85o0y" path="res://scripts/CharacterData.gd" id="1_ym223"]
+
+[resource]
+script = ExtResource("1_ym223")
+nome = "Fablio"
+unique = true
+team = 1
+ai = false
+pvisual = {
+"arms.modulate": Color(0.831373, 0.360784, 0.215686, 1),
+"arms.texture": "res://assets/sprites/Entidades/Humanoide/Braços.png",
+"arrow.modulate": Color(1, 0, 0, 1),
+"arrow.texture": "res://assets/sprites/Entidades/Arrow.png",
+"boots.modulate": Color(0.0487857, 0.0548701, 0.28124, 1),
+"boots.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Botas0.png",
+"cape.modulate": Color(1, 1, 1, 1),
+"cape.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Face0.png",
+"face.modulate": Color(0, 0, 0, 1),
+"face.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Face4.png",
+"hair.modulate": Color(0.395082, 0.2504, 0.110135, 1),
+"hair.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Cabelo1.png",
+"hat.modulate": Color(1, 1, 1, 1),
+"hat.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Face0.png",
+"head.modulate": Color(0.832318, 0.361951, 0.215179, 1),
+"head.texture": "res://assets/sprites/Entidades/Humanoide/Cabeça.png",
+"legs.modulate": Color(0.831373, 0.360784, 0.215686, 1),
+"legs.texture": "res://assets/sprites/Entidades/Humanoide/Pernas.png",
+"shirt.modulate": Color(0.331606, 0.446188, 0.268042, 1),
+"shirt.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Camisa0.png",
+"sleeves.modulate": Color(0.333333, 0.447059, 0.266667, 1),
+"sleeves.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Mangas1.png",
+"torso.modulate": Color(0.831373, 0.360784, 0.215686, 1),
+"torso.texture": "res://assets/sprites/Entidades/Humanoide/Tronco.png"
+}
+perks = {
+&"Vantagem0": null
+}
+equips = {
+&"Acessório0": null,
+&"Acessório1": null,
+&"Acessório2": null,
+&"Equipamento0": ExtResource("1_pr5ny"),
+&"Equipamento1": null,
+&"Mecanismo": null
+}
+actions = {
+&"Ação0": null,
+&"Ação1": null,
+&"Ação2": null,
+&"Ação3": null,
+&"Ação4": null,
+&"Ação5": null,
+&"Ação6": null,
+&"Ação7": null,
+&"Ação8": null,
+&"Ação9": null
+}
+POD = 1
+TEC = 2
+AST = 3
+VIG = 0

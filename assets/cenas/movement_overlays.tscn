@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddhwh0hwu421i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uy531"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0, 0, 1, 0.478431)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lmnxa"]
+material = SubResource("StandardMaterial3D_uy531")
+size = Vector2(1, 1)
+center_offset = Vector3(0, 0.251, 0)
+
+[node name="Overlays" type="Node3D"]
+
+[node name="Movement" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_lmnxa")
+
+[node name="Flight" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("PlaneMesh_lmnxa")

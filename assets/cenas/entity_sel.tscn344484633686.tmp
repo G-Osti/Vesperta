@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://gf7onp0fxua8"]
+
+[ext_resource type="Texture2D" uid="uid://btwa0jqiqyr76" path="res://assets/sprites/menus/CharSel.png" id="1_l6hb6"]
+[ext_resource type="Script" uid="uid://bq1rr1l607hed" path="res://scripts/entity_sel.gd" id="2_l6hb6"]
+[ext_resource type="Texture2D" uid="uid://c7cx1kh5qloqv" path="res://assets/sprites/ícones/Retratos/32x32.png" id="3_n1opj"]
+[ext_resource type="Texture2D" uid="uid://yruasovqjool" path="res://assets/sprites/menus/CharBar.png" id="4_sr40m"]
+[ext_resource type="Theme" uid="uid://ybeppq67fc1h" path="res://recursos/TRES/new_theme.tres" id="5_ishpe"]
+
+[node name="EntityTurn" type="TextureButton"]
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+texture_filter = 1
+offset_right = 52.0
+offset_bottom = 26.0
+texture_normal = ExtResource("1_l6hb6")
+script = ExtResource("2_l6hb6")
+
+[node name="Retrato" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 35.0
+offset_bottom = 34.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_n1opj")
+
+[node name="Vida" type="TextureProgressBar" parent="."]
+self_modulate = Color(0.372549, 0.870588, 0.235294, 1)
+layout_mode = 1
+offset_left = 3.0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 21.0
+max_value = 17.0
+value = 17.0
+fill_mode = 3
+texture_progress = ExtResource("4_sr40m")
+
+[node name="Energia" type="TextureProgressBar" parent="."]
+self_modulate = Color(0.94902, 0.796078, 0.172549, 1)
+layout_mode = 1
+offset_left = 3.0
+offset_top = 22.0
+offset_right = 20.0
+offset_bottom = 24.0
+max_value = 17.0
+value = 17.0
+fill_mode = 3
+texture_progress = ExtResource("4_sr40m")
+
+[node name="Nome" type="Label" parent="."]
+layout_mode = 1
+offset_left = 22.0
+offset_top = 2.0
+offset_right = 49.0
+offset_bottom = 8.0
+theme = ExtResource("5_ishpe")
+theme_override_font_sizes/font_size = 3
+text = "Maeve S."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

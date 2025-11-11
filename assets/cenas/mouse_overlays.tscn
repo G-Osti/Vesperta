@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx4xbxi5b5bsp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui5u0"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 1, 0.478431)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s1mjw"]
+material = SubResource("StandardMaterial3D_ui5u0")
+size = Vector2(1, 1)
+center_offset = Vector3(0, 0.251, 0)
+
+[node name="Overlays" type="Node3D"]
+
+[node name="MouseSelect" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_s1mjw")

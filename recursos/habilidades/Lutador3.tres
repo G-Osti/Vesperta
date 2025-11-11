@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://byfr2yd60dxim"]
+
+[ext_resource type="Texture2D" uid="uid://dgxp3lw4n560o" path="res://assets/sprites/ícones/Habilidades/Lutador3.png" id="1_uv3sg"]
+[ext_resource type="Script" uid="uid://bofguuctih6u8" path="res://scripts/SkillData.gd" id="2_cdg6x"]
+
+[resource]
+script = ExtResource("2_cdg6x")
+icon = ExtResource("1_uv3sg")
+name = "Primeiros Socorros"
+type = ""
+element = ""
+C1 = Color(1, 1, 1, 1)
+C2 = Color(1, 1, 1, 1)
+C3 = Color(1, 1, 1, 1)
+description = "Lança uma névoa que esfria um alvo."
+perks = {}

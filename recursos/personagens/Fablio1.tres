@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://ckyfpb2m86b81"]
+
+[ext_resource type="Resource" uid="uid://vv2xup7s81qs" path="res://recursos/itens/Arco.tres" id="1_eeuth"]
+[ext_resource type="Script" uid="uid://dlj8ig8c85o0y" path="res://scripts/CharacterData.gd" id="2_oaqgp"]
+
+[resource]
+script = ExtResource("2_oaqgp")
+nome = "Fablio"
+unique = false
+team = 1
+ai = false
+pvisual = {
+"arms.modulate": PackedColorArray(0.91, 0.44954, 0.3094, 1, 0.831373, 0.360784, 0.215686, 1, 0.75, 0.3705, 0.255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"arms.texture": "res://assets/sprites/Entidades/Humanoide/Braços.png",
+"boots.modulate": PackedColorArray(0.0470588, 0.054902, 0.282353, 1, 0.018, 0.0240667, 0.2, 1, 0.0228, 0.02604, 0.12, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"boots.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Botas0.png",
+"face.modulate": PackedColorArray(0, 0, 0, 1, 0.6, 0.06, 0.105, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.06, 0.105, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+"face.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Face4.png",
+"hair.modulate": PackedColorArray(0.22, 0.13376, 0.0352, 1, 0.16, 0.0928, 0.016, 1, 0.1, 0.0608, 0.016, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"hair.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Cabelo1.png",
+"hat.modulate": PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"hat.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Face0.png",
+"head.modulate": PackedColorArray(0.91, 0.44954, 0.3094, 1, 0.831373, 0.360784, 0.215686, 1, 0.75, 0.3705, 0.255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"head.texture": "res://assets/sprites/Entidades/Humanoide/Cabeça.png",
+"legs.modulate": PackedColorArray(0.91, 0.44954, 0.3094, 1, 0.831373, 0.360784, 0.215686, 1, 0.75, 0.3705, 0.255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"legs.texture": "res://assets/sprites/Entidades/Humanoide/Pernas.png",
+"shirt.modulate": PackedColorArray(0.3702, 0.45, 0.324, 1, 0.30602, 0.39, 0.2574, 1, 0.27148, 0.33, 0.2376, 1, 0.40018, 0.51, 0.3366, 1, 0.333333, 0.447059, 0.266667, 1, 0.30602, 0.39, 0.2574, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"shirt.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Camisa0.png",
+"sleeves.modulate": PackedColorArray(0.3702, 0.45, 0.324, 1, 0.30602, 0.39, 0.2574, 1, 0.27148, 0.33, 0.2376, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"sleeves.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Mangas0.png",
+"torso.modulate": PackedColorArray(0.91, 0.44954, 0.3094, 1, 0.831373, 0.360784, 0.215686, 1, 0.75, 0.3705, 0.255, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0177333, 0.006, 0.05, 1),
+"torso.texture": "res://assets/sprites/Entidades/Humanoide/Tronco.png"
+}
+perks = {
+&"Vantagem0": null
+}
+equips = {
+&"Acessório0": null,
+&"Acessório1": null,
+&"Acessório2": null,
+&"Equipamento0": ExtResource("1_eeuth"),
+&"Equipamento1": null,
+&"Mecanismo": null
+}
+actions = {
+&"Ação0": null,
+&"Ação1": null,
+&"Ação2": null,
+&"Ação3": null,
+&"Ação4": null,
+&"Ação5": null,
+&"Ação6": null,
+&"Ação7": null,
+&"Ação8": null,
+&"Ação9": null
+}

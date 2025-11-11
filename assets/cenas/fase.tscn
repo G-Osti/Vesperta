@@ -1,0 +1,2143 @@
+[gd_scene load_steps=56 format=3 uid="uid://ymjhnqay2gih"]
+
+[ext_resource type="Script" uid="uid://m8fhiianwuca" path="res://scripts/level.gd" id="1_80876"]
+[ext_resource type="Script" uid="uid://da7vkbpidqldv" path="res://scripts/control.gd" id="2_bibt5"]
+[ext_resource type="Script" uid="uid://uyrnwdp502nj" path="res://scripts/environment.gd" id="3_nt0an"]
+[ext_resource type="Resource" uid="uid://cf71dxrycxmnm" path="res://recursos/personagens/Aldric1.tres" id="4_f1nor"]
+[ext_resource type="MeshLibrary" uid="uid://c5ae6g71e78jj" path="res://assets/tiles/overlays.tres" id="5_i7xs6"]
+[ext_resource type="Resource" uid="uid://ckyfpb2m86b81" path="res://recursos/personagens/Fablio1.tres" id="5_jbky5"]
+[ext_resource type="Resource" uid="uid://dccf4yot5uchh" path="res://recursos/personagens/Mirinie1.tres" id="6_4qtho"]
+[ext_resource type="PackedScene" uid="uid://dvj2tqhdcnqm0" path="res://assets/cenas/Character.tscn" id="7_xi307"]
+[ext_resource type="MeshLibrary" uid="uid://o8y3vbjrgl1j" path="res://assets/tiles/PixelTiles.tres" id="8_o8wje"]
+[ext_resource type="Script" uid="uid://cjb2ul2axgjql" path="res://scripts/camera.gd" id="9_awuam"]
+[ext_resource type="Script" uid="uid://dorc01sxmm8xh" path="res://scripts/ui.gd" id="9_yq8ug"]
+[ext_resource type="Texture2D" uid="uid://b8irtv3a41iu3" path="res://assets/sprites/menus/Nametag1.png" id="10_21d4c"]
+[ext_resource type="Texture2D" uid="uid://dn00v6g27gtnt" path="res://assets/sprites/menus/Bar1.png" id="11_gw851"]
+[ext_resource type="Theme" uid="uid://ybeppq67fc1h" path="res://recursos/TRES/new_theme.tres" id="14_3hqf6"]
+[ext_resource type="Theme" uid="uid://cthxkuntdfu2x" path="res://assets/fonts/Default_Theme.tres" id="14_gw851"]
+[ext_resource type="Texture2D" uid="uid://b4ea630i3wj0k" path="res://assets/sprites/menus/Frames/SquareNormalOver.png" id="15_xwut6"]
+[ext_resource type="Script" uid="uid://bqgwc85fj8si7" path="res://assets/cenas/CharacterMenu.gd" id="19_usfmu"]
+[ext_resource type="Texture2D" uid="uid://nbwd8ohxhc5n" path="res://assets/sprites/menus/Action_line_back.png" id="21_yq8ug"]
+[ext_resource type="Texture2D" uid="uid://ba1or8acuq42d" path="res://assets/sprites/menus/Action_line.png" id="22_xwut6"]
+[ext_resource type="Texture2D" uid="uid://c2ecp147xf0t7" path="res://assets/sprites/menus/SmallButton.png" id="23_67tlr"]
+[ext_resource type="Texture2D" uid="uid://ghj34bk4ot0i" path="res://assets/sprites/ícones/BW/ArrowsSide.png" id="24_xwut6"]
+[ext_resource type="Texture2D" uid="uid://5jrbinkfrkbh" path="res://assets/sprites/menus/Clock.png" id="25_45874"]
+[ext_resource type="Texture2D" uid="uid://cdhxlhtu00kog" path="res://assets/sprites/ícones/BW/FootSteps.png" id="25_a5fls"]
+[ext_resource type="Texture2D" uid="uid://bt6pmh3mis71q" path="res://assets/sprites/ícones/BW/Potion.png" id="26_21d4c"]
+[ext_resource type="Texture2D" uid="uid://k2jy170miydg" path="res://assets/sprites/menus/Frames/LabelLarge.png" id="34_5cbse"]
+[ext_resource type="Texture2D" uid="uid://crmcp11wmvfy2" path="res://assets/sprites/menus/Frames/SquareToggleOver.png" id="36_nad4k"]
+[ext_resource type="Texture2D" uid="uid://c1vgbd1hb0f0d" path="res://assets/sprites/menus/Frames/SquareHoverOver.png" id="37_hlbfn"]
+[ext_resource type="Texture2D" uid="uid://cf74sr1wkgtuc" path="res://assets/sprites/ícones/BW/Sword.png" id="40_8j048"]
+[ext_resource type="Texture2D" uid="uid://0phsw3itbd3v" path="res://assets/sprites/ícones/BW/ArrowUp.png" id="40_o8v2j"]
+[ext_resource type="Theme" uid="uid://ciww4h8tdlvmt" path="res://Default_Theme.tres" id="44_5ahbq"]
+[ext_resource type="PackedScene" uid="uid://bvarxex5m4xev" path="res://assets/cenas/equip_slot.tscn" id="45_wvka1"]
+[ext_resource type="PackedScene" uid="uid://b6yw0f75trjib" path="res://assets/cenas/slot.tscn" id="46_uahxb"]
+[ext_resource type="Texture2D" uid="uid://cfqggw5rnmbul" path="res://assets/sprites/menus/Frames/SquareNormalNoBorder.png" id="47_ylugh"]
+[ext_resource type="Texture2D" uid="uid://b0w4fheui5mm2" path="res://assets/sprites/menus/Frames/SquareToggleNoBorder.png" id="48_6dugp"]
+[ext_resource type="Texture2D" uid="uid://dem0b12v55v3r" path="res://assets/sprites/menus/Nametag.png" id="48_mcl1r"]
+[ext_resource type="Texture2D" uid="uid://h2xde17lncd6" path="res://assets/sprites/menus/Bar.png" id="49_m2l0k"]
+[ext_resource type="Texture2D" uid="uid://bmsfjo5vhb5m8" path="res://assets/sprites/menus/Frames/SquareHoverNoBorder.png" id="49_x8fbe"]
+[ext_resource type="FontFile" uid="uid://jjxyr8ob3wd4" path="res://assets/fonts/dogicapixel.ttf" id="50_nf0rs"]
+[ext_resource type="Texture2D" uid="uid://30r37tnnm1gi" path="res://assets/sprites/menus/Frames/MenuFrame.png" id="53_bva6n"]
+
+[sub_resource type="Environment" id="Environment_7ymvl"]
+tonemap_exposure = 1.2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_18p76"]
+viewport_path = NodePath("UI/InferiorMenu/CharUI/EntityAction/SubViewport")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sb5cx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0c0op"]
+viewport_path = NodePath("UI/CharacterMenu/CharScrn/Status/List/attributes")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iwxb3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4kex"]
+atlas = SubResource("CompressedTexture2D_iwxb3")
+region = Rect2(0, 48, 44, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_djot3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7e7a"]
+atlas = SubResource("CompressedTexture2D_djot3")
+region = Rect2(0, 56, 44, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fdhk8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyxrj"]
+atlas = SubResource("CompressedTexture2D_fdhk8")
+region = Rect2(0, 64, 44, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7yxym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnkqy"]
+atlas = SubResource("CompressedTexture2D_7yxym")
+region = Rect2(0, 72, 44, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5jbue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7n85"]
+atlas = SubResource("CompressedTexture2D_5jbue")
+region = Rect2(0, 80, 44, 8)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vy7la"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u87i"]
+atlas = SubResource("CompressedTexture2D_vy7la")
+region = Rect2(0, 88, 44, 8)
+
+[node name="Level" type="Node"]
+script = ExtResource("1_80876")
+
+[node name="Control" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_bibt5")
+
+[node name="Char" parent="Control" instance=ExtResource("7_xi307")]
+char = ExtResource("4_f1nor")
+cell_coord = Vector3i(0, 0, 0)
+
+[node name="Char2" parent="Control" instance=ExtResource("7_xi307")]
+char = ExtResource("5_jbky5")
+cell_coord = Vector3i(2, 0, 2)
+
+[node name="Char3" parent="Control" instance=ExtResource("7_xi307")]
+char = ExtResource("6_4qtho")
+cell_coord = Vector3i(3, 0, 1)
+
+[node name="Environment" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_nt0an")
+
+[node name="ObjectsMap" type="GridMap" parent="Environment"]
+cell_size = Vector3(1, 0.458, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="MouseOverlay" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.458, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="ShadowsOverlay" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.458, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="ActionOverlay" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.458, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="EffectsMap" type="GridMap" parent="Environment"]
+cell_size = Vector3(1, 0.458, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMap" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("8_o8wje")
+cell_size = Vector3(1, 0.458, 1)
+bake_navigation = true
+data = {
+"cells": PackedInt32Array(0, 0, 2, 0, 1, 3, 65535, 1, 2, 65535, 2, 1, 65535, 3, 2, 0, 3, 3, 0, 2, 3, 1, 3, 3, 1, 2, 3, 1, 1, 3, 1, 0, 3, 1, 65535, 3, 2, 65535, 3, 3, 65535, 3, 3, 0, 1, 4, 0, 1, 5, 0, 3, 5, 1, 3, 4, 1, 3, 4, 2, 3, 4, 3, 3, 3, 3, 3, 3, 4, 4, 2, 3, 3, 2, 2, 3, 2, 1, 3, 2, 0, 2, 3, 1, 1, 0, 4, 3, 65535, 4, 3, 3, 2, 3, 1, 4, 3, 1, 5, 3, 2, 4, 3, 4, 4, 4, 4, 5, 4, 3, 5, 4, 2, 5, 4, 0, 5, 3, 65535, 5, 3, 65534, 5, 3, 65534, 4, 3, 65534, 3, 1, 65535, 0, 3, 65535, 65535, 3, 65534, 0, 3, 65534, 1, 1, 65533, 1, 1, 65533, 2, 1, 65534, 2, 1, 0, 65535, 3, 1, 65534, 2, 2, 65534, 3, 3, 65534, 3, 4, 65534, 4, 4, 65535, 3, 5, 65534, 4, 5, 65535, 4, 65533, 3, 2, 65532, 3, 3, 65532, 4, 3, 65532, 5, 4, 65533, 5, 3, 65533, 4, 3, 65533, 6, 4, 65534, 6, 4, 65535, 6, 4, 2, 6, 4, 1, 7, 4, 0, 8, 4, 0, 7, 4, 65535, 7, 4, 0, 6, 3, 1, 6, 4, 5, 4, 4, 5, 3, 4, 6, 3, 4, 6, 2, 4, 6, 1, 4, 6, 0, 4, 6, 65535, 4, 5, 2, 3, 0, 65534, 1, 65535, 65534, 1, 65534, 65535, 3, 4, 65533, 4, 3, 65533, 3, 2, 65533, 3, 1, 65533, 1, 7, 0, 4, 7, 1, 4, 7, 2, 4, 65533, 7, 5, 65534, 7, 5, 65533, 8, 5, 65534, 8, 5, 65535, 8, 5, 65535, 9, 5, 0, 9, 5, 0, 10, 5, 1, 8, 5, 1, 9, 5, 2, 7, 5, 2, 8, 5, 3, 6, 5, 3, 7, 5, 4, 6, 5, 4, 7, 5, 5, 5, 5, 5, 6, 5, 6, 4, 5, 6, 5, 5, 7, 3, 5, 7, 4, 5, 8, 2, 5, 8, 3, 5, 9, 3, 5, 9, 2, 5, 9, 1, 5, 9, 0, 5, 8, 0, 5, 8, 1, 5, 8, 65535, 5, 7, 65535, 5, 7, 65534, 5, 6, 65534, 5, 6, 65533, 5, 5, 65533, 5, 65532, 6, 5, 65532, 7, 5, 65532, 2, 3, 65532, 1, 2, 65532, 0, 1, 65531, 0, 3, 65532, 65535, 3, 65532, 65534, 3, 65532, 65533, 3, 65533, 65533, 3, 65533, 65534, 3, 65533, 65535, 2, 65534, 65534, 1, 65534, 65533, 2, 65533, 0, 1, 65535, 65533, 1, 0, 65533, 1, 0, 65532, 3, 1, 65532, 3, 65535, 65532, 3, 65534, 65532, 3, 65531, 1, 3, 65531, 2, 3, 65531, 65535, 3, 131070, 2, 1, 131070, 1, 1, 131069, 1, 1, 131069, 0, 1, 131070, 65534, 1, 131071, 65534, 1, 65536, 65533, 1, 65539, 0, 1, 131075, 0, 1, 196605, 0, 1, 196606, 65534, 1, 131072, 65533, 1, 196605, 1, 1, 262141, 0, 1, 262142, 65534, 1, 196608, 65533, 1, 196611, 0, 1, 65531, 65534, 3, 65533, 65532, 3, 2, 65532, 3, 3, 65532, 4, 1, 65531, 3, 0, 65531, 3, 65535, 65531, 3, 65534, 65531, 3, 2, 65531, 4, 4, 65532, 4, 3, 65531, 4, 5, 65532, 5, 6, 65532, 5, 4, 65531, 5, 5, 65531, 5)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="BackMap" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("8_o8wje")
+cell_size = Vector3(1, 0.458, 1)
+collision_layer = 2
+collision_mask = 2
+bake_navigation = true
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Camera" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_awuam")
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 18.89, 14.84, 19.975)
+keep_aspect = 0
+environment = SubResource("Environment_7ymvl")
+doppler_tracking = 2
+projection = 1
+current = true
+fov = 37.8493
+size = 14.142
+
+[node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+follow_viewport_enabled = true
+script = ExtResource("9_yq8ug")
+
+[node name="Minimap" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Turns" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -52.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(54, 56)
+size_flags_horizontal = 4
+
+[node name="Select" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -52.0
+offset_right = 64.0
+offset_bottom = 60.0
+grow_vertical = 2
+pivot_offset = Vector2(0, 56)
+size_flags_horizontal = 4
+
+[node name="Selector" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+
+[node name="Placa" type="TextureRect" parent="UI/Selector"]
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_right = 72.0
+offset_bottom = 20.0
+grow_horizontal = 2
+pivot_offset = Vector2(72, 0)
+texture = ExtResource("10_21d4c")
+
+[node name="Vida" type="TextureProgressBar" parent="UI/Selector/Placa"]
+self_modulate = Color(0.372505, 0.87, 0.2349, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -4.0
+offset_right = 64.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 128.0
+value = 54.0
+texture_progress = ExtResource("11_gw851")
+
+[node name="Label" type="Label" parent="UI/Selector/Placa"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -20.0
+offset_right = 72.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_gw851")
+theme_override_colors/font_color = Color(1, 0.22, 0.22, 1)
+theme_override_font_sizes/font_size = 12
+text = "Inimigo 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InferiorMenu" type="Control" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -149.0
+offset_top = -2.0
+offset_right = 149.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(149, 0)
+
+[node name="CharUI" type="HBoxContainer" parent="UI/InferiorMenu"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -22.0
+offset_right = 143.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(167, 22)
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Key1" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key1"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key2" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key2"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key3" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key3"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key4" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(1, 0, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key4"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key5" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(1, 0, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key5"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key6" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(1, 0, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key6"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key7" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key7"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key8" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key8"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key9" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key9"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key0" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key0"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key10" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key10"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key11" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key11"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key12" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key12"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Key13" type="TextureButton" parent="UI/InferiorMenu/CharUI"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("15_xwut6")
+texture_pressed = ExtResource("36_nad4k")
+texture_hover = ExtResource("37_hlbfn")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/CharUI/Key13"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("40_8j048")
+stretch_mode = 5
+
+[node name="Placa" type="TextureRect" parent="UI/InferiorMenu"]
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -43.0
+offset_right = 74.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(74, 20)
+texture = ExtResource("48_mcl1r")
+
+[node name="Vida" type="TextureProgressBar" parent="UI/InferiorMenu/Placa"]
+self_modulate = Color(0.372505, 0.87, 0.2349, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -19.0
+offset_right = 64.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 128.0
+texture_progress = ExtResource("49_m2l0k")
+
+[node name="Acao" type="TextureProgressBar" parent="UI/InferiorMenu/Placa"]
+self_modulate = Color(0.2079, 0.54681, 0.99, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -22.0
+offset_right = 61.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 4.0
+value = 3.0
+texture_under = ExtResource("21_yq8ug")
+texture_progress = ExtResource("22_xwut6")
+
+[node name="Label" type="Label" parent="UI/InferiorMenu/Placa"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -17.0
+offset_right = 72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_gw851")
+theme_override_font_sizes/font_size = 12
+text = "Maeve S."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Correr" type="TextureButton" parent="UI/InferiorMenu/Placa"]
+visible = false
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -41.0
+offset_right = 21.0
+offset_bottom = -21.0
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("23_67tlr")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/Placa/Correr"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+texture = ExtResource("24_xwut6")
+stretch_mode = 5
+
+[node name="Esgueirar" type="TextureButton" parent="UI/InferiorMenu/Placa"]
+visible = false
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -41.0
+offset_right = -1.0
+offset_bottom = -21.0
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("23_67tlr")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/Placa/Esgueirar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+texture = ExtResource("25_a5fls")
+stretch_mode = 5
+
+[node name="Inv" type="TextureButton" parent="UI/InferiorMenu/Placa"]
+visible = false
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -41.0
+offset_right = -23.0
+offset_bottom = -21.0
+mouse_filter = 1
+toggle_mode = true
+texture_normal = ExtResource("23_67tlr")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/Placa/Inv"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+texture = ExtResource("26_21d4c")
+stretch_mode = 5
+
+[node name="EndTurn" type="TextureButton" parent="UI/InferiorMenu/Placa"]
+visible = false
+self_modulate = Color(0.75, 0.17, 0.15, 1)
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = -41.0
+offset_right = 43.0
+offset_bottom = -21.0
+pivot_offset = Vector2(10, 10)
+mouse_filter = 1
+texture_normal = ExtResource("23_67tlr")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="UI/InferiorMenu/Placa/EndTurn"]
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(8, 8)
+texture = ExtResource("25_45874")
+stretch_mode = 5
+
+[node name="CharacterMenu" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("19_usfmu")
+
+[node name="ColorRect" type="ColorRect" parent="UI/CharacterMenu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.372549)
+
+[node name="CharScrn" type="ColorRect" parent="UI/CharacterMenu"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 608.0
+offset_bottom = 304.0
+mouse_filter = 1
+color = Color(0.156863, 0.156863, 0.176471, 1)
+
+[node name="Skills" type="Control" parent="UI/CharacterMenu/CharScrn"]
+anchors_preset = 0
+offset_left = 176.0
+offset_top = 24.0
+offset_right = 220.0
+offset_bottom = 216.0
+
+[node name="SkillsList" type="VBoxContainer" parent="UI/CharacterMenu/CharScrn/Skills"]
+layout_mode = 2
+offset_right = 44.0
+offset_bottom = 192.0
+alignment = 1
+
+[node name="Extra" parent="UI/CharacterMenu/CharScrn/Skills/SkillsList" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Extra"
+
+[node name="Suporte" parent="UI/CharacterMenu/CharScrn/Skills/SkillsList" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Suporte"
+
+[node name="Classe" parent="UI/CharacterMenu/CharScrn/Skills/SkillsList" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Classe"
+
+[node name="Equipamento" parent="UI/CharacterMenu/CharScrn/Skills/SkillsList" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Equipamento"
+
+[node name="Character" type="Control" parent="UI/CharacterMenu/CharScrn"]
+texture_filter = 1
+custom_minimum_size = Vector2(32, 40)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 228.0
+offset_top = 16.0
+offset_right = 348.0
+offset_bottom = 200.0
+mouse_filter = 1
+
+[node name="Conditions" type="HBoxContainer" parent="UI/CharacterMenu/CharScrn/Character"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+offset_left = -6.10352e-05
+offset_right = 120.0
+offset_bottom = 22.0
+
+[node name="SubViewport" type="SubViewport" parent="UI/CharacterMenu/CharScrn/Character"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 64)
+
+[node name="Avatar" type="Node2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport"]
+position = Vector2(6, -32)
+scale = Vector2(1.5, 1.5)
+
+[node name="Head" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="UI/CharacterMenu/CharScrn/Character/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+
+[node name="Image" type="TextureRect" parent="UI/CharacterMenu/CharScrn/Character"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 12.0
+offset_top = 80.0
+offset_right = 108.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_18p76")
+expand_mode = 3
+
+[node name="Life" type="TextureRect" parent="UI/CharacterMenu/CharScrn/Character"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 7.7449
+offset_top = 53.128
+offset_right = 112.745
+offset_bottom = 62.128
+
+[node name="Bar" type="TextureProgressBar" parent="UI/CharacterMenu/CharScrn/Character/Life"]
+self_modulate = Color(0.356863, 0.760784, 0.105882, 1)
+layout_mode = 1
+offset_right = 105.0
+offset_bottom = 9.0
+value = 100.0
+nine_patch_stretch = true
+
+[node name="Penalty" type="TextureProgressBar" parent="UI/CharacterMenu/CharScrn/Character/Life/Bar"]
+self_modulate = Color(0.67451, 0.352941, 0.866667, 1)
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 9.0
+value = 25.0
+fill_mode = 1
+nine_patch_stretch = true
+
+[node name="Value" type="Label" parent="UI/CharacterMenu/CharScrn/Character/Life/Bar"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -12.0
+offset_right = 39.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 13)
+mouse_filter = 1
+theme = ExtResource("14_3hqf6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "50/50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy" type="TextureRect" parent="UI/CharacterMenu/CharScrn/Character"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 7.7449
+offset_top = 40.128
+offset_right = 112.745
+offset_bottom = 49.128
+grow_vertical = 0
+
+[node name="Bar" type="TextureProgressBar" parent="UI/CharacterMenu/CharScrn/Character/Energy"]
+self_modulate = Color(1, 0.556863, 0.0196078, 1)
+layout_mode = 1
+offset_right = 105.0
+offset_bottom = 9.0
+value = 100.0
+nine_patch_stretch = true
+
+[node name="Penalty" type="TextureProgressBar" parent="UI/CharacterMenu/CharScrn/Character/Energy/Bar"]
+self_modulate = Color(0.67451, 0.352941, 0.866667, 1)
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 9.0
+value = 25.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = SubResource("CompressedTexture2D_sb5cx")
+
+[node name="Value" type="Label" parent="UI/CharacterMenu/CharScrn/Character/Energy/Bar"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -12.0
+offset_right = 39.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("14_3hqf6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "50/50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nametag" type="TextureRect" parent="UI/CharacterMenu/CharScrn/Character"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = 0.024934
+offset_top = 24.128
+offset_right = 120.025
+offset_bottom = 36.128
+grow_vertical = 0
+texture = ExtResource("34_5cbse")
+
+[node name="Value" type="Label" parent="UI/CharacterMenu/CharScrn/Character/Nametag"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -6.0
+offset_right = 60.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("14_3hqf6")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+text = "S.Azul"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="Equip" type="Control" parent="UI/CharacterMenu/CharScrn"]
+anchors_preset = 0
+offset_left = 356.0
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 216.0
+
+[node name="Slots" type="VBoxContainer" parent="UI/CharacterMenu/CharScrn/Equip"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.091
+anchor_top = -0.292
+anchor_right = -5.091
+anchor_bottom = -0.292
+offset_left = 224.004
+offset_top = 56.064
+offset_right = 268.004
+offset_bottom = 248.064
+
+[node name="Acessório3" parent="UI/CharacterMenu/CharScrn/Equip/Slots" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Acessório"
+
+[node name="Acessório2" parent="UI/CharacterMenu/CharScrn/Equip/Slots" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Acessório"
+
+[node name="Acessório1" parent="UI/CharacterMenu/CharScrn/Equip/Slots" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Acessório"
+
+[node name="Armadura" parent="UI/CharacterMenu/CharScrn/Equip/Slots" instance=ExtResource("45_wvka1")]
+layout_mode = 2
+slot_type = "Armadura"
+
+[node name="Status" type="Control" parent="UI/CharacterMenu/CharScrn"]
+anchors_preset = 0
+offset_left = 416.0
+offset_top = 16.0
+offset_right = 704.0
+offset_bottom = 448.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("14_3hqf6")
+
+[node name="List" type="VBoxContainer" parent="UI/CharacterMenu/CharScrn/Status"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 432.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/CharacterMenu/CharScrn/Status/List"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("ViewportTexture_0c0op")
+
+[node name="attributes" type="SubViewport" parent="UI/CharacterMenu/CharScrn/Status/List"]
+transparent_bg = true
+size = Vector2i(160, 150)
+
+[node name="MeshInstance2D" type="Polygon2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+color = Color(1, 1, 1, 0.431373)
+polygon = PackedVector2Array(80, 16, 141, 60, 118, 132, 42, 132, 19, 60)
+
+[node name="Line2D" type="Line2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+points = PackedVector2Array(80, 16, 141, 60, 118, 132, 42, 132, 19, 60)
+closed = true
+width = 3.0
+
+[node name="0" type="Line2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+points = PackedVector2Array(80, 80, 80, 80, 80, 80, 80, 80, 80, 80)
+closed = true
+width = 1.0
+default_color = Color(0.643137, 0.643137, 0.643137, 0.431373)
+
+[node name="1" type="Line2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+points = PackedVector2Array(80, 64, 95, 75, 89, 93, 71, 93, 65, 75)
+closed = true
+width = 1.0
+default_color = Color(0.643137, 0.643137, 0.643137, 0.431373)
+
+[node name="2" type="Line2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+points = PackedVector2Array(80, 48, 110, 70, 99, 106, 61, 106, 50, 70)
+closed = true
+width = 1.0
+default_color = Color(0.643137, 0.643137, 0.643137, 0.431373)
+
+[node name="3" type="Line2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+points = PackedVector2Array(80, 32, 126, 65, 108, 119, 52, 119, 34, 65)
+closed = true
+width = 1.0
+default_color = Color(0.643137, 0.643137, 0.643137, 0.431373)
+
+[node name="4" type="Line2D" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+points = PackedVector2Array(80, 16, 141, 60, 118, 132, 42, 132, 19, 60)
+closed = true
+width = 1.0
+default_color = Color(0.643137, 0.643137, 0.643137, 0.431373)
+
+[node name="FIS" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+offset_left = 50.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "FIS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="POD" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+offset_left = 118.0
+offset_top = 52.0
+offset_right = 178.0
+offset_bottom = 62.0
+rotation = 1.25664
+pivot_offset = Vector2(30, 5)
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "POD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DES" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+offset_left = 94.0
+offset_top = 153.0
+offset_right = 158.0
+offset_bottom = 163.0
+rotation = -0.628319
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "DES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AST" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+offset_left = 14.0
+offset_top = 115.0
+offset_right = 78.0
+offset_bottom = 125.0
+rotation = 0.628319
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "AST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ESP" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/attributes"]
+offset_left = -18.0
+offset_top = 51.0
+offset_right = 42.0
+offset_bottom = 61.0
+rotation = -1.25664
+pivot_offset = Vector2(30, 5)
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "ESP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="characteristics" type="HBoxContainer" parent="UI/CharacterMenu/CharScrn/Status/List"]
+layout_mode = 2
+alignment = 1
+
+[node name="TURN" type="TextureButton" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+texture_normal = ExtResource("47_ylugh")
+texture_pressed = ExtResource("48_6dugp")
+texture_hover = ExtResource("49_x8fbe")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/TURN"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Velocidade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/TURN"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 6
+text = "Pontos de Ação"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VEL" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/TURN"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PAC" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/TURN"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 60.0
+offset_right = 44.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 12
+text = "4/6PA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ACT" type="TextureButton" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+texture_normal = ExtResource("47_ylugh")
+texture_pressed = ExtResource("48_6dugp")
+texture_hover = ExtResource("49_x8fbe")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/ACT"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Precisão"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/ACT"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Crítico"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PRE" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/ACT"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CRT" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/ACT"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 60.0
+offset_right = 44.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 12
+text = "5.0%x1.5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DEF" type="TextureButton" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+texture_normal = ExtResource("47_ylugh")
+texture_pressed = ExtResource("48_6dugp")
+texture_hover = ExtResource("49_x8fbe")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/DEF"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Reflexos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/DEF"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "AMP/TEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="REF" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/DEF"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AMPTEN" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics/DEF"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 60.0
+offset_right = 44.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "+0.0%/+0.0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="characteristics2" type="HBoxContainer" parent="UI/CharacterMenu/CharScrn/Status/List"]
+layout_mode = 2
+alignment = 1
+
+[node name="MOV" type="TextureButton" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+texture_normal = ExtResource("47_ylugh")
+texture_pressed = ExtResource("48_6dugp")
+texture_hover = ExtResource("49_x8fbe")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/MOV"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Movimento"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/MOV"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "FUR/PER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MOV" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/MOV"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 24
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FURPER" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/MOV"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 60.0
+offset_right = 44.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "+0.0%/+0.0%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ATQ" type="TextureButton" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+texture_normal = ExtResource("47_ylugh")
+texture_pressed = ExtResource("48_6dugp")
+texture_hover = ExtResource("49_x8fbe")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/ATQ"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 6.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Dano"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/ATQ"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 48.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 8
+text = "Alcance"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DAN" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/ATQ"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.0
+offset_top = 20.0
+offset_right = 21.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ALC" type="Label" parent="UI/CharacterMenu/CharScrn/Status/List/characteristics2/ATQ"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 60.0
+offset_right = 44.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+theme_override_font_sizes/font_size = 12
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="perksbox" type="ScrollContainer" parent="UI/CharacterMenu/CharScrn/Status/List"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="perks" type="GridContainer" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox"]
+layout_mode = 2
+columns = 6
+
+[node name="perk" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk2" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk3" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk4" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk5" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk6" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk7" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk8" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk9" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk10" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk11" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="perk12" parent="UI/CharacterMenu/CharScrn/Status/List/perksbox/perks" instance=ExtResource("46_uahxb")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="PrevChar" type="TextureButton" parent="UI/CharacterMenu/CharScrn"]
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+rotation = -1.5708
+texture_normal = ExtResource("40_o8v2j")
+stretch_mode = 5
+
+[node name="NextChar" type="TextureButton" parent="UI/CharacterMenu/CharScrn"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_horizontal = 0
+rotation = 1.5708
+texture_normal = ExtResource("40_o8v2j")
+stretch_mode = 5
+
+[node name="FloatingMenu" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FullMap" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DebugPanelLeft" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 72.0
+
+[node name="Label" type="Label" parent="UI/DebugPanelLeft"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 40.0
+theme = ExtResource("14_3hqf6")
+theme_override_constants/paragraph_spacing = -2
+theme_override_fonts/font = ExtResource("50_nf0rs")
+text = "aaaaa aaa 
+aaaaaaaaa"
+
+[node name="DebugPanelRight" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/DebugPanelRight"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 40.0
+theme = ExtResource("14_3hqf6")
+theme_override_constants/paragraph_spacing = -2
+theme_override_font_sizes/font_size = 4
+text = "aaaaa aaa 
+aaaaaaaaa"
+horizontal_alignment = 2
+
+[node name="LineEdit" type="LineEdit" parent="UI/DebugPanelRight"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 42.0
+theme = ExtResource("14_3hqf6")
+theme_override_font_sizes/font_size = 2
+alignment = 2
+
+[node name="PauseMenu" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.372549)
+
+[node name="PauseBack" type="TextureRect" parent="UI/PauseMenu"]
+custom_minimum_size = Vector2(120, 115)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -165.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("53_bva6n")
+
+[node name="Resumir" type="TextureButton" parent="UI/PauseMenu/PauseBack"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = -56.0
+offset_bottom = 28.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_x4kex")
+texture_pressed = SubResource("AtlasTexture_k7e7a")
+texture_hover = SubResource("AtlasTexture_dyxrj")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/PauseMenu/PauseBack/Resumir"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 33.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("44_5ahbq")
+text = "Resumir"
+horizontal_alignment = 1
+
+[node name="Salvar" type="TextureButton" parent="UI/PauseMenu/PauseBack"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 70.0
+offset_right = -56.0
+offset_bottom = 78.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_x4kex")
+texture_pressed = SubResource("AtlasTexture_k7e7a")
+texture_hover = SubResource("AtlasTexture_dyxrj")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/PauseMenu/PauseBack/Salvar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 23.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("44_5ahbq")
+text = "Salvar"
+horizontal_alignment = 1
+
+[node name="Carregar" type="TextureButton" parent="UI/PauseMenu/PauseBack"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 120.0
+offset_right = -56.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_x4kex")
+texture_pressed = SubResource("AtlasTexture_k7e7a")
+texture_hover = SubResource("AtlasTexture_dyxrj")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/PauseMenu/PauseBack/Carregar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 39.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("44_5ahbq")
+text = "Carregar"
+horizontal_alignment = 1
+
+[node name="Configurações" type="TextureButton" parent="UI/PauseMenu/PauseBack"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 170.0
+offset_right = -56.0
+offset_bottom = 178.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_x4kex")
+texture_pressed = SubResource("AtlasTexture_k7e7a")
+texture_hover = SubResource("AtlasTexture_dyxrj")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/PauseMenu/PauseBack/Configurações"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 32.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("44_5ahbq")
+text = "Configs"
+horizontal_alignment = 1
+
+[node name="Menu" type="TextureButton" parent="UI/PauseMenu/PauseBack"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 220.0
+offset_right = -56.0
+offset_bottom = 228.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_x4kex")
+texture_pressed = SubResource("AtlasTexture_k7e7a")
+texture_hover = SubResource("AtlasTexture_dyxrj")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/PauseMenu/PauseBack/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("44_5ahbq")
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="Sair" type="TextureButton" parent="UI/PauseMenu/PauseBack"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 270.0
+offset_right = -56.0
+offset_bottom = 278.0
+grow_horizontal = 2
+texture_normal = SubResource("AtlasTexture_tnkqy")
+texture_pressed = SubResource("AtlasTexture_q7n85")
+texture_hover = SubResource("AtlasTexture_3u87i")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/PauseMenu/PauseBack/Sair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("44_5ahbq")
+text = "Sair"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="UI/Selector" to="UI" method="_on_selector_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Selector" to="UI" method="_on_selector_mouse_exited"]
+[connection signal="mouse_entered" from="UI/InferiorMenu" to="UI" method="_on_inferior_menu_mouse_entered"]
+[connection signal="mouse_exited" from="UI/InferiorMenu" to="UI" method="_on_inferior_menu_mouse_exited"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key1" to="UI" method="_on_key_1_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key2" to="UI" method="_on_key_2_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key3" to="UI" method="_on_key_3_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key4" to="UI" method="_on_key_4_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key5" to="UI" method="_on_key_5_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key6" to="UI" method="_on_key_6_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key7" to="UI" method="_on_key_7_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key8" to="UI" method="_on_key_8_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key9" to="UI" method="_on_key_9_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key0" to="UI" method="_on_key_0_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key10" to="UI" method="_on_key_0_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key11" to="UI" method="_on_key_0_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key12" to="UI" method="_on_key_0_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/CharUI/Key13" to="UI" method="_on_key_0_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/Placa/Correr" to="UI" method="_on_correr_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/Placa/Esgueirar" to="UI" method="_on_esgueirar_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/Placa/Inv" to="UI" method="_on_inv_button_up"]
+[connection signal="button_up" from="UI/InferiorMenu/Placa/EndTurn" to="UI" method="_on_end_turn_button_up"]
+[connection signal="visibility_changed" from="UI/CharacterMenu" to="UI/CharacterMenu" method="_on_visibility_changed"]
+[connection signal="pressed" from="UI/CharacterMenu/CharScrn/PrevChar" to="UI/CharacterMenu" method="_on_prev_char_pressed"]
+[connection signal="pressed" from="UI/CharacterMenu/CharScrn/NextChar" to="UI/CharacterMenu" method="_on_next_char_pressed"]
+[connection signal="visibility_changed" from="UI/PauseMenu" to="UI" method="_on_pause_menu_visibility_changed"]
+[connection signal="button_up" from="UI/PauseMenu/PauseBack/Resumir" to="UI" method="_on_resumir_button_up"]
+[connection signal="button_up" from="UI/PauseMenu/PauseBack/Salvar" to="UI" method="_on_salvar_button_up"]
+[connection signal="button_up" from="UI/PauseMenu/PauseBack/Carregar" to="UI" method="_on_carregar_button_up"]
+[connection signal="button_up" from="UI/PauseMenu/PauseBack/Configurações" to="UI" method="_on_configurações_button_up"]
+[connection signal="button_up" from="UI/PauseMenu/PauseBack/Menu" to="UI" method="_on_menu_button_up"]
+[connection signal="pressed" from="UI/PauseMenu/PauseBack/Sair" to="UI" method="_on_sair_pressed"]

@@ -1,0 +1,187 @@
+[gd_scene load_steps=22 format=4 uid="uid://gt6658kmqmq6"]
+
+[ext_resource type="Script" uid="uid://cwgc4m06peiuy" path="res://scripts/entity_turn.gd" id="1_ca8ce"]
+[ext_resource type="Texture2D" uid="uid://cqve8neskk7l7" path="res://assets/sprites/menus/Turn.png" id="1_f2eqy"]
+[ext_resource type="Texture2D" uid="uid://107n0kugfl4k" path="res://assets/sprites/menus/BarTurn.png" id="3_kxhra"]
+[ext_resource type="Theme" uid="uid://ybeppq67fc1h" path="res://recursos/TRES/new_theme.tres" id="5_a5m42"]
+[ext_resource type="Theme" uid="uid://cthxkuntdfu2x" path="res://assets/fonts/Default_Theme.tres" id="5_qay8n"]
+[ext_resource type="Material" uid="uid://colf7r0jv1lcy" path="res://assets/cenas/SpriteColor.tres" id="6_qqcun"]
+[ext_resource type="Texture2D" uid="uid://d321ci5yyqc5a" path="res://assets/sprites/Entidades/Humanoide/Cabeça.png" id="7_qqcun"]
+[ext_resource type="Shader" uid="uid://daodtt32gcds7" path="res://assets/cenas/SpriteColor.gdshader" id="8_cbs0c"]
+[ext_resource type="Texture2D" uid="uid://7mmkljhrm0lu" path="res://assets/sprites/Entidades/Humanoide/Braços.png" id="8_ovk15"]
+[ext_resource type="Texture2D" uid="uid://w4syajksp6fy" path="res://assets/sprites/Entidades/Humanoide/Tronco.png" id="9_cbs0c"]
+[ext_resource type="Texture2D" uid="uid://7fiev6ln8wte" path="res://assets/sprites/Entidades/Humanoide/Pernas.png" id="10_pyxma"]
+[ext_resource type="Texture2D" uid="uid://bd8tnbrynbgli" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Mangas0.png" id="11_d3085"]
+[ext_resource type="Texture2D" uid="uid://d14xe5u74nd8b" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Camisa0.png" id="12_eix8w"]
+[ext_resource type="Texture2D" uid="uid://dyceghh0d7x0x" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Botas0.png" id="13_ivugi"]
+[ext_resource type="Texture2D" uid="uid://h867tli67trv" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Cabelo0.png" id="14_mheqn"]
+[ext_resource type="Texture2D" uid="uid://dv7bikstlde5x" path="res://assets/sprites/Entidades/Humanoide/Acessorios/Face0.png" id="15_0327w"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vcr53"]
+viewport_path = NodePath("Avatar")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyxma"]
+shader = ExtResource("8_cbs0c")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3085"]
+shader = ExtResource("8_cbs0c")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eix8w"]
+shader = ExtResource("8_cbs0c")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivugi"]
+shader = ExtResource("8_cbs0c")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1)
+
+[node name="EntityTurn" type="TextureButton"]
+self_modulate = Color(0.439216, 0.47451, 0.509804, 1)
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -52.0
+offset_bottom = 21.0
+grow_horizontal = 0
+pivot_offset = Vector2(52, 10)
+texture_normal = ExtResource("1_f2eqy")
+script = ExtResource("1_ca8ce")
+
+[node name="Retrato" type="TextureRect" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 0
+offset_left = 33.0
+offset_top = 2.0
+offset_right = 49.0
+offset_bottom = 18.0
+texture = SubResource("ViewportTexture_vcr53")
+expand_mode = 4
+
+[node name="Vida" type="TextureProgressBar" parent="."]
+self_modulate = Color(0.372549, 0.870588, 0.235294, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = 1.0
+offset_right = -20.0
+offset_bottom = 18.0
+grow_horizontal = 0
+max_value = 17.0
+value = 17.0
+fill_mode = 3
+texture_progress = ExtResource("3_kxhra")
+
+[node name="Turno" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -51.0
+offset_top = 2.0
+offset_right = -22.0
+offset_bottom = 18.0
+grow_horizontal = 0
+theme = ExtResource("5_qay8n")
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nome" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = 10.0
+offset_right = -11.0
+offset_bottom = 21.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("5_a5m42")
+theme_override_font_sizes/font_size = 12
+text = "Maeve S."
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 1
+
+[node name="Avatar" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(16, 16)
+
+[node name="Offset" type="Node2D" parent="Avatar"]
+texture_filter = 1
+position = Vector2(8, 12)
+
+[node name="Head" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 3
+z_index = 2
+material = ExtResource("6_qqcun")
+texture = ExtResource("7_qqcun")
+hframes = 10
+
+[node name="Arms" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 2
+z_index = 2
+material = SubResource("ShaderMaterial_pyxma")
+texture = ExtResource("8_ovk15")
+hframes = 10
+
+[node name="Torso" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 1
+z_index = 1
+material = SubResource("ShaderMaterial_d3085")
+texture = ExtResource("9_cbs0c")
+hframes = 10
+
+[node name="Legs" type="Sprite2D" parent="Avatar/Offset"]
+material = SubResource("ShaderMaterial_eix8w")
+texture = ExtResource("10_pyxma")
+hframes = 10
+
+[node name="Sleeves" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 3
+z_index = 2
+material = SubResource("ShaderMaterial_ivugi")
+texture = ExtResource("11_d3085")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 2
+z_index = 1
+material = SubResource("ShaderMaterial_ivugi")
+texture = ExtResource("12_eix8w")
+hframes = 10
+
+[node name="Boots" type="Sprite2D" parent="Avatar/Offset"]
+process_priority = 1
+material = SubResource("ShaderMaterial_ivugi")
+texture = ExtResource("13_ivugi")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="Avatar/Offset"]
+z_index = 3
+material = SubResource("ShaderMaterial_ivugi")
+texture = ExtResource("14_mheqn")
+hframes = 10
+
+[node name="Face" type="Sprite2D" parent="Avatar/Offset"]
+z_index = 3
+material = SubResource("ShaderMaterial_ivugi")
+texture = ExtResource("15_0327w")
+hframes = 4
+
+[node name="Hat" type="Sprite2D" parent="Avatar/Offset"]
+material = SubResource("ShaderMaterial_ivugi")
+hframes = 10
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

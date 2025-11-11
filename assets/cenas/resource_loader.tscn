@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7cqh83j5vl31"]
+
+[ext_resource type="Script" uid="uid://b6f07d3tamqqu" path="res://scripts/resource_loader.gd" id="1_5kisy"]
+
+[node name="ResourceLoader" type="Node"]
+script = ExtResource("1_5kisy")
+item_folder = "res://recursos/itens"

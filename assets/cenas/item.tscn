@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjckovsurc11u"]
+
+[ext_resource type="Script" uid="uid://toq1alfxwuif" path="res://scripts/item.gd" id="1_as046"]
+[ext_resource type="Texture2D" uid="uid://dwqrqfrpgxc4g" path="res://assets/sprites/ícones/Equipamentos/Machado.png" id="2_bcp8u"]
+
+[node name="Item" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 33.0
+offset_bottom = 33.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_as046")
+
+[node name="Icon" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
+layout_direction = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 20.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+texture = ExtResource("2_bcp8u")
+stretch_mode = 5
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

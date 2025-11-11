@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://3e2erpog4afd"]
+
+[ext_resource type="Texture2D" uid="uid://c7t4xbp4g6yap" path="res://assets/sprites/ícones/Habilidades/Lutador2.png" id="1_pifyl"]
+[ext_resource type="Script" uid="uid://bofguuctih6u8" path="res://scripts/SkillData.gd" id="2_acglg"]
+
+[resource]
+script = ExtResource("2_acglg")
+icon = ExtResource("1_pifyl")
+name = "Investida"
+type = ""
+element = ""
+C1 = Color(1, 1, 1, 1)
+C2 = Color(1, 1, 1, 1)
+C3 = Color(1, 1, 1, 1)
+description = "Lança uma névoa que esfria um alvo."
+perks = {}

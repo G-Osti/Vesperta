@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://ymjhnqay2gih"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_80876"]
+[ext_resource type="MeshLibrary" uid="uid://y0sgu5kdk8qd" path="res://recursos/tiles/tiles.tres" id="1_a4l6c"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="2_bibt5"]
+[ext_resource type="Script" path="res://scripts/environment.gd" id="3_nt0an"]
+[ext_resource type="MeshLibrary" uid="uid://c5ae6g71e78jj" path="res://recursos/tiles/overlays.tres" id="5_i7xs6"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="5_t0tcm"]
+[ext_resource type="Script" path="res://scripts/entity.gd" id="6_0b0j5"]
+[ext_resource type="Script" path="res://scripts/ai.gd" id="6_dh0bi"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="7_h8yw6"]
+[ext_resource type="Texture2D" uid="uid://ddlnxx0vexknv" path="res://recursos/sprites/personagens/Cubinho Azul Borda.png" id="7_rhy6m"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="9_awuam"]
+
+[sub_resource type="Environment" id="Environment_7ymvl"]
+
+[node name="Level" type="Node"]
+script = ExtResource("1_80876")
+
+[node name="Control" type="Node" parent="."]
+script = ExtResource("2_bibt5")
+
+[node name="Environment" type="Node3D" parent="."]
+script = ExtResource("3_nt0an")
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.707107, 0.612372, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 4, 0)
+light_energy = 1.1
+light_bake_mode = 1
+shadow_normal_bias = 10.0
+directional_shadow_mode = 0
+
+[node name="GridMap" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("1_a4l6c")
+cell_size = Vector3(1, 0.5, 1)
+bake_navigation = true
+data = {
+"cells": PackedInt32Array(0, 0, 3, 1, 0, 2, 0, 65535, 2, 65535, 0, 2, 0, 1, 3, 0, 65534, 2, 65535, 65535, 2, 65534, 0, 3, 65535, 1, 2, 0, 2, 2, 1, 1, 2, 2, 0, 2, 1, 65535, 3, 65536, 0, 3, 65537, 0, 3, 131071, 0, 3, 65536, 65535, 3, 131072, 0, 3, 65535, 2, 3, 65534, 1, 1, 65533, 0, 1, 65533, 1, 3, 65533, 2, 3, 65533, 3, 3, 65534, 2, 3, 65534, 3, 3, 1, 3, 2, 0, 4, 2, 65535, 4, 2, 65533, 4, 3, 1, 4, 3, 2, 3, 3, 2, 2, 2, 3, 2, 3, 3, 1, 3, 4, 0, 3, 3, 65535, 3, 3, 65534, 3, 2, 65535, 3, 2, 1, 2, 4, 65535, 2, 4, 65534, 3, 1, 65533, 1, 0, 65533, 2, 0, 65532, 3, 65535, 65532, 2, 65534, 65532, 3, 65533, 65532, 3, 65532, 65532, 3, 65532, 65533, 2, 65532, 65534, 3, 65532, 65535, 2, 65534, 65533, 2, 65533, 65533, 2, 1, 65534, 3, 3, 65533, 1, 3, 65532, 3, 131070, 3, 1, 196606, 3, 1, 131069, 65533, 1, 65540, 65535, 1, 65538, 2, 1, 65536, 4, 1, 0, 5, 3, 65535, 5, 1, 1, 5, 3, 131071, 65533, 1, 196606, 65533, 1, 196607, 65533, 1, 3, 0, 1, 1, 2, 3, 0, 3, 1, 65535, 3, 3, 65534, 4, 1, 65534, 65535, 3, 65533, 65535, 3, 65533, 65534, 3, 65535, 65534, 2, 65534, 65534, 1, 2, 65533, 3, 2, 65534, 1, 4, 65533, 3, 2, 4, 4, 3, 3, 4, 4, 2, 4, 4, 1, 4, 65534, 5, 4, 65533, 5, 4, 65535, 6, 4, 0, 6, 4, 1, 6, 4, 2, 5, 4, 5, 0, 4, 5, 65535, 4, 5, 65534, 4, 5, 65533, 4, 65535, 65533, 2, 131070, 65533, 2, 131072, 65535, 3, 196608, 65535, 3, 262144, 65535, 3)
+}
+metadata/_editor_floor_ = Vector3(0, 4, 0)
+
+[node name="MouseOverlay" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.5, 1)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="ActionOverlay" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.5, 1)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="EffectsOverlay" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.5, 1)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="Obstacles" type="GridMap" parent="Environment"]
+mesh_library = ExtResource("5_i7xs6")
+cell_size = Vector3(1, 0.5, 1)
+metadata/_editor_floor_ = Vector3(0, 2, 0)
+
+[node name="Player" type="Node3D" parent="."]
+script = ExtResource("5_t0tcm")
+
+[node name="Entity" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.5, 0.5)
+script = ExtResource("6_0b0j5")
+
+[node name="StatusControl" type="Node" parent="Player/Entity"]
+
+[node name="AIControl" type="Node" parent="Player/Entity"]
+
+[node name="ActionsControl" type="Node" parent="Player/Entity"]
+
+[node name="Sprite" type="Sprite3D" parent="Player/Entity"]
+transform = Transform3D(2.99968, 0, 0, 0, 2.99968, 0, 0, 0, 2.99968, 0.5, 0, 0.5)
+offset = Vector2(0, 32)
+pixel_size = 0.014
+billboard = 1
+alpha_scissor_threshold = 1.0
+texture_filter = 0
+texture = ExtResource("7_rhy6m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Entity/Sprite"]
+
+[node name="AnimationTree" type="AnimationTree" parent="Player/Entity/Sprite"]
+
+[node name="AI" type="Node3D" parent="."]
+script = ExtResource("6_dh0bi")
+
+[node name="Camera" type="Node3D" parent="."]
+script = ExtResource("9_awuam")
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 10, 10, 10)
+environment = SubResource("Environment_7ymvl")
+doppler_tracking = 2
+projection = 1
+fov = 37.8493
+size = 8.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("7_h8yw6")
+
+[node name="TerrainStatus" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Coordinates" type="Control" parent="UI/TerrainStatus"]
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Backgground" type="TextureRect" parent="UI/TerrainStatus/Coordinates"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/TerrainStatus/Coordinates"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "X: 00, Y: 00, Z:00"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SkillsMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FloatSkillsMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Turns" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inventory" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

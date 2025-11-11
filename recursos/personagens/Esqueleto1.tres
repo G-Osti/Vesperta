@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://cls2mvtwh6wrs"]
+
+[ext_resource type="Script" uid="uid://dlj8ig8c85o0y" path="res://scripts/CharacterData.gd" id="1_3y3im"]
+
+[resource]
+script = ExtResource("1_3y3im")
+nome = "Character"
+unique = false
+team = 0
+ai = false
+pvisual = null
+perks = {
+&"Vantagem0": null
+}
+equips = {
+&"Acessório0": null,
+&"Acessório1": null,
+&"Acessório2": null,
+&"Equipamento0": null,
+&"Equipamento1": null,
+&"Mecanismo": null
+}
+actions = {
+&"Ação0": null,
+&"Ação1": null,
+&"Ação2": null,
+&"Ação3": null,
+&"Ação4": null,
+&"Ação5": null,
+&"Ação6": null,
+&"Ação7": null,
+&"Ação8": null,
+&"Ação9": null
+}
+POD = 0
+TEC = 0
+AST = 0
+VIG = 0

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6yw0f75trjib"]
+
+[ext_resource type="Script" uid="uid://bmn0k6jxb1nte" path="res://scripts/slot.gd" id="1_fv6pu"]
+[ext_resource type="Texture2D" uid="uid://b4ea630i3wj0k" path="res://assets/sprites/menus/Frames/SquareNormalOver.png" id="1_hhskw"]
+[ext_resource type="Texture2D" uid="uid://crmcp11wmvfy2" path="res://assets/sprites/menus/Frames/SquareToggleOver.png" id="2_kwjq5"]
+[ext_resource type="Texture2D" uid="uid://d31gs66867afn" path="res://assets/sprites/ícones/IconesEquipamentos.png" id="2_rlsul"]
+[ext_resource type="Texture2D" uid="uid://c1vgbd1hb0f0d" path="res://assets/sprites/menus/Frames/SquareHoverOver.png" id="3_s0ptu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j27dh"]
+atlas = ExtResource("2_rlsul")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Slot" type="TextureButton"]
+custom_minimum_size = Vector2(44, 44)
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+texture_normal = ExtResource("1_hhskw")
+texture_pressed = ExtResource("2_kwjq5")
+texture_hover = ExtResource("3_s0ptu")
+stretch_mode = 5
+script = ExtResource("1_fv6pu")
+
+[node name="Back" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.592157)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_j27dh")
+
+[connection signal="minimum_size_changed" from="." to="." method="_on_minimum_size_changed"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

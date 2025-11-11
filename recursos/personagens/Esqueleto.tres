@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://bb32uqjkpmpks"]
+
+[ext_resource type="Script" uid="uid://dlj8ig8c85o0y" path="res://scripts/CharacterData.gd" id="1_le5bu"]
+
+[resource]
+script = ExtResource("1_le5bu")
+nome = "Esqueleto"
+unique = false
+team = 2
+ai = false
+pvisual = {
+"arms.modulate": Color(0.960784, 0.568627, 0.505882, 1),
+"arms.texture": "res://assets/sprites/Entidades/Humanoide/Braços.png",
+"arrow.modulate": Color(1, 0, 0, 1),
+"arrow.texture": "res://assets/sprites/Entidades/Arrow.png",
+"boots.modulate": Color(0.2, 0.172549, 0.172549, 1),
+"boots.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Botas0.png",
+"cape.modulate": Color(1, 1, 1, 1),
+"cape.texture": null,
+"face.modulate": Color(0, 0, 0, 1),
+"face.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Face0.png",
+"hair.modulate": Color(0.0862745, 0.0862745, 0.0862745, 1),
+"hair.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Cabelo0.png",
+"hat.modulate": Color(1, 1, 1, 1),
+"hat.texture": null,
+"head.modulate": Color(0.960784, 0.568627, 0.505882, 1),
+"head.texture": "res://assets/sprites/Entidades/Humanoide/Cabeça.png",
+"legs.modulate": Color(0.960784, 0.568627, 0.505882, 1),
+"legs.texture": "res://assets/sprites/Entidades/Humanoide/Pernas.png",
+"shirt.modulate": Color(0.447059, 0.180392, 0.141176, 1),
+"shirt.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Camisa0.png",
+"sleeves.modulate": Color(0.447059, 0.180392, 0.141176, 1),
+"sleeves.texture": "res://assets/sprites/Entidades/Humanoide/Acessorios/Mangas0.png",
+"torso.modulate": Color(0.960784, 0.568627, 0.505882, 1),
+"torso.texture": "res://assets/sprites/Entidades/Humanoide/Tronco.png"
+}
+perks = {
+&"Raça": null,
+&"Vantagem1": null
+}
+equips = {
+&"Acessório0": null,
+&"Acessório1": null,
+&"Acessório2": null,
+&"Armadura": null,
+&"Classe": null,
+&"Equipamento": null,
+&"Extra": null,
+&"Suporte": null
+}
+actions = {
+&"Ação Padrão": null,
+&"Ação0": null,
+&"Ação1": null,
+&"Ação2": null,
+&"Ação3": null,
+&"Ação4": null,
+&"Ação5": null,
+&"Ação6": null,
+&"Ação7": null,
+&"Ação8": null,
+&"Ação9": null
+}
+POD = 2
+TEC = 0
+AST = 2
+VIG = 0

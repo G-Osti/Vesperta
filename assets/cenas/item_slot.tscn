@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4s8vx20xy1au"]
+
+[ext_resource type="Script" uid="uid://bmn0k6jxb1nte" path="res://scripts/slot.gd" id="1_7dbaj"]
+[ext_resource type="Texture2D" uid="uid://d31gs66867afn" path="res://assets/sprites/ícones/IconesEquipamentos.png" id="2_w4dt8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7acqb"]
+load_path = "res://.godot/imported/SkillOutset.png-fbe6946ce8528494608e6fafa1c93ef4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5cx5"]
+atlas = SubResource("CompressedTexture2D_7acqb")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_suy5g"]
+load_path = "res://.godot/imported/SkillOutset.png-fbe6946ce8528494608e6fafa1c93ef4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nits"]
+atlas = SubResource("CompressedTexture2D_suy5g")
+region = Rect2(40, 0, 20, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bj375"]
+load_path = "res://.godot/imported/SkillOutset.png-fbe6946ce8528494608e6fafa1c93ef4.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmkk0"]
+atlas = SubResource("CompressedTexture2D_bj375")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j27dh"]
+atlas = ExtResource("2_w4dt8")
+region = Rect2(0, 0, 16, 16)
+
+[node name="ItemSlot" type="TextureButton"]
+custom_minimum_size = Vector2(24, 24)
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_e5cx5")
+texture_pressed = SubResource("AtlasTexture_5nits")
+texture_hover = SubResource("AtlasTexture_nmkk0")
+stretch_mode = 5
+script = ExtResource("1_7dbaj")
+
+[node name="Back" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.592157)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = SubResource("AtlasTexture_j27dh")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

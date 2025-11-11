@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=4 uid="uid://colf7r0jv1lcy"]
+
+[ext_resource type="Shader" uid="uid://daodtt32gcds7" path="res://assets/cenas/SpriteColor.gdshader" id="1_gyf8o"]
+
+[resource]
+shader = ExtResource("1_gyf8o")
+shader_parameter/C = PackedVector4Array(0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1)

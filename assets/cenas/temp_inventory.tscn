@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4t2a51s0wvmd"]
+
+[node name="Inventory" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 125.0
+offset_bottom = 150.0
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 125.0
+offset_bottom = 150.0
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="Grid" type="VBoxContainer" parent="Scroll"]
+texture_filter = 1
+custom_minimum_size = Vector2(112, 125)
+layout_mode = 2
+size_flags_vertical = 3

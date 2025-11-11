@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dcyml8fel036a"]
+
+[ext_resource type="Texture2D" uid="uid://cjhtebtspfaks" path="res://assets/sprites/ícones/Equipamentos/Espada.png" id="1_mmllv"]
+[ext_resource type="Script" uid="uid://hky7nleycnba" path="res://scripts/ItemData.gd" id="2_pqx6g"]
+
+[resource]
+script = ExtResource("2_pqx6g")
+icon = ExtResource("1_mmllv")
+color = PackedColorArray(0.548792, 0.628141, 0.707909, 1, 0.468, 0.559, 0.65, 1, 0.4602, 0.5251, 0.59, 1, 0.42, 0.21392, 0.1512, 1, 0.36, 0.1668, 0.108, 1, 0.3, 0.1528, 0.108, 1, 0.95, 0.0475, 0.0475, 1, 0.0177333, 0.006, 0.05, 1)
+name = "Espada"
+type = "Equipamento"
+subtype1 = "Uma Mão"
+subtype2 = "Nenhum"
+anim = "Perto"
+description = "Uma espada comum."
+PV = 0
+VEL = -1
+CRT = 3
+DAN = Vector2i(4, 2)
+M_CRT = 0.0
+MOV = 0
+AM = 0
+AD = {
+&"calor": 0,
+&"frio": 0,
+&"físico": 0,
+&"geral": 0,
+&"mental": 0,
+&"miasma": 0,
+&"raio": 0
+}
+PRE = 0
+REF = 0
+ALC = 0
+CB = 0
+perks = {}

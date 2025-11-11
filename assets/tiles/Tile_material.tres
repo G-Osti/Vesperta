@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cnvm0okka1ave"]
+
+[ext_resource type="Shader" uid="uid://be266hopt3pgp" path="res://Shaders/Tile.gdshader" id="1_acro3"]
+[ext_resource type="Texture2D" uid="uid://s1hp3dxbot5y" path="res://assets/sprites/Texturas/Selecao.png" id="2_wxo0e"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_acro3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_wxo0e")
+shader_parameter/albedo_texture_size = Vector2i(32, 32)
+shader_parameter/depth_offset_factor = 0.1

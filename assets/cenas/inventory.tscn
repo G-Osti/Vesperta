@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3 uid="uid://cq3gx5wenbd0a"]
+
+[ext_resource type="Theme" uid="uid://ybeppq67fc1h" path="res://recursos/TRES/new_theme.tres" id="1_eltpp"]
+[ext_resource type="PackedScene" uid="uid://b6yw0f75trjib" path="res://assets/cenas/slot.tscn" id="2_ac2pr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yqehp"]
+load_path = "res://.godot/imported/Menu.png-5a17eead236ed6716d1c96afaf16b4bb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss4vj"]
+atlas = SubResource("CompressedTexture2D_yqehp")
+region = Rect2(16, 16, 16, 16)
+
+[node name="Inventory" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 216.0
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 16.0
+theme = ExtResource("1_eltpp")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 12
+text = "Inventário"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Switch" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 128.0
+offset_right = 144.0
+offset_bottom = 16.0
+texture_normal = SubResource("AtlasTexture_ss4vj")
+stretch_mode = 5
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 208.0
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="Scroll"]
+texture_filter = 1
+custom_minimum_size = Vector2(144, 184)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 4
+
+[node name="hand" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand2" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand3" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand4" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand5" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand6" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand7" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand8" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand9" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand10" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand11" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand12" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand13" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand14" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand15" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="hand16" parent="Scroll/Grid" instance=ExtResource("2_ac2pr")]
+layout_mode = 2
+slot_type = "Eqp"
+
+[node name="Gold" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 88.0
+offset_top = 224.0
+offset_right = 184.0
+offset_bottom = 240.0
+size_flags_horizontal = 10
+size_flags_vertical = 2
+
+[node name="Label" type="Label" parent="Gold"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 16.0
+grow_vertical = 0
+theme = ExtResource("1_eltpp")
+theme_override_font_sizes/font_size = 8
+text = "99999 G"
+horizontal_alignment = 2
+vertical_alignment = 1

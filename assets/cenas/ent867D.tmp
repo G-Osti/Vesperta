@@ -1,0 +1,174 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxrvy7q1lht4r"]
+
+[ext_resource type="Script" path="res://scripts/entity.gd" id="1_g4664"]
+[ext_resource type="Script" path="res://recursos/cenas/ActionsControl.gd" id="2_ipvf2"]
+[ext_resource type="Texture2D" uid="uid://ddlnxx0vexknv" path="res://recursos/sprites/personagens/Cubinho Azul Borda.png" id="2_kbl0c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bagm"]
+atlas = ExtResource("2_kbl0c")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="Animation" id="Animation_kxyaj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(2.07053, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.9, 0), Vector3(1, 0.9, 0), Vector3(0, 0.9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_xaps4"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_2vrrs"]
+resource_name = "jump"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9),
+"transitions": PackedFloat32Array(0.933033, 1.1487),
+"update": 0,
+"values": [Vector3(0.5, 1.5, 0.5), Vector3(1.5, 1, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1.93188, 0.683021, 5.65685),
+"update": 0,
+"values": [Vector3(0, 0.85, 0), Vector3(0, 2, 0), Vector3(0, 0.85, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0hrq3"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.5, 1.5, 0.5), Vector3(1.5, 1.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t3628"]
+_data = {
+"attack": SubResource("Animation_kxyaj"),
+"defense": SubResource("Animation_xaps4"),
+"jump": SubResource("Animation_2vrrs"),
+"walk": SubResource("Animation_0hrq3")
+}
+
+[node name="Entity" type="Node3D"]
+process_priority = 2
+process_physics_priority = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.5, 0.5)
+script = ExtResource("1_g4664")
+
+[node name="StatusControl" type="Node" parent="."]
+
+[node name="AIControl" type="Node" parent="."]
+
+[node name="ActionsControl" type="Node" parent="."]
+script = ExtResource("2_ipvf2")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+process_priority = 2
+process_physics_priority = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+sorting_use_aabb_center = false
+flip_h = true
+pixel_size = 0.03
+billboard = 1
+alpha_scissor_threshold = 0.0
+texture_filter = 0
+render_priority = 5
+texture = SubResource("AtlasTexture_2bagm")
+hframes = 3
+vframes = 2
+region_rect = Rect2(0, 0, 32, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+
+[connection signal="animation_finished" from="Sprite/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

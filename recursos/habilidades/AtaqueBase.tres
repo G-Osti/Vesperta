@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3 uid="uid://b816gxy3vxlk3"]
+
+[ext_resource type="Texture2D" uid="uid://cf74sr1wkgtuc" path="res://assets/sprites/ícones/BW/Sword.png" id="1_1qfoo"]
+[ext_resource type="Script" uid="uid://bofguuctih6u8" path="res://scripts/SkillData.gd" id="2_x0r3g"]
+
+[resource]
+script = ExtResource("2_x0r3g")
+icon = ExtResource("1_1qfoo")
+name = "Ataque Base"
+description = "Balança sua arma contra um adversário, causando dano físico."
+type = ""
+element = ""
+perks = {}

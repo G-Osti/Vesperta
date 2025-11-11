@@ -1,0 +1,1172 @@
+[gd_scene load_steps=19 format=3 uid="uid://y1jbdv01t1dx"]
+
+[ext_resource type="Texture2D" uid="uid://b8skqwuyg4mxb" path="res://assets/sprites/Entidades/Personagens/Corpos/Humano.png" id="5_jxke0"]
+[ext_resource type="Texture2D" uid="uid://cx8o4l30eogko" path="res://assets/sprites/Entidades/Personagens/Roupas/Braços/Braços0.png" id="6_xc6yd"]
+[ext_resource type="Texture2D" uid="uid://dm06aq52sv251" path="res://assets/sprites/Entidades/Personagens/Roupas/Tronco/Tronco0.png" id="7_t5hr7"]
+[ext_resource type="Texture2D" uid="uid://cx3t30vy48nkx" path="res://assets/sprites/Entidades/Personagens/Roupas/Pernas/Pernas0.png" id="8_qtj8l"]
+[ext_resource type="Texture2D" uid="uid://1cctwjixsxsu" path="res://assets/sprites/Entidades/Personagens/Cabelos/Cabelo1.png" id="9_6avkg"]
+[ext_resource type="Texture2D" uid="uid://0n32nvgn1alx" path="res://assets/sprites/Entidades/Personagens/Faces/Face0.png" id="10_ejxgb"]
+[ext_resource type="Texture2D" uid="uid://33jkldk14jdv" path="res://assets/sprites/Entidades/Personagens/Humanoide.png" id="11_i3w48"]
+
+[sub_resource type="Animation" id="Animation_3eany"]
+resource_name = "Andar1"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Avatar/Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.382341, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Avatar/Arms:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 12, 10, 14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Avatar/Torso:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 22, 20, 23]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Avatar/Legs:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [30, 32, 30, 34]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Avatar/Face:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Avatar/Face:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Avatar/Shirt:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 2]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Avatar/Sleeves:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 4]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Avatar/Boots:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 4]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Avatar/Hair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_yp38g"]
+resource_name = "Andar1"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Avatar/Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.382341, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Avatar/Arms:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [11, 13, 11, 15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Avatar/Torso:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [21, 23, 21, 23]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Avatar/Legs:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [31, 33, 31, 35]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Avatar/Face:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Avatar/Shirt:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 2]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Avatar/Sleeves:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Avatar/Boots:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 5]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Avatar/Hair:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 3]
+}
+
+[sub_resource type="Animation" id="Animation_r41wj"]
+resource_name = "Ataque1"
+
+[sub_resource type="Animation" id="Animation_kxyaj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_xaps4"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_2vrrs"]
+resource_name = "jump"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9),
+"transitions": PackedFloat32Array(0.933033, 1.1487),
+"update": 0,
+"values": [Vector3(0.5, 1.5, 0.5), Vector3(1.5, 1, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1.93188, 0.683021, 5.65685),
+"update": 0,
+"values": [Vector3(0, 0.85, 0), Vector3(0, 2, 0), Vector3(0, 0.85, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0hrq3"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t3628"]
+_data = {
+&"Andar1": SubResource("Animation_3eany"),
+&"Andar2": SubResource("Animation_yp38g"),
+&"Ataque1": SubResource("Animation_r41wj"),
+&"attack": SubResource("Animation_kxyaj"),
+&"defense": SubResource("Animation_xaps4"),
+&"jump": SubResource("Animation_2vrrs"),
+&"walk": SubResource("Animation_0hrq3")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_23ejq"]
+viewport_path = NodePath("EntityPreview1/Sprite/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oa0g0"]
+
+[sub_resource type="Environment" id="Environment_flqsq"]
+tonemap_exposure = 1.2
+
+[node name="EntitiesPreview" type="Node3D"]
+
+[node name="EntityPreview1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+
+[node name="Sprite" type="Node3D" parent="EntityPreview1"]
+
+[node name="SubViewport" type="SubViewport" parent="EntityPreview1/Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 96)
+
+[node name="Avatar" type="Node2D" parent="EntityPreview1/Sprite/SubViewport"]
+position = Vector2(16, 32)
+
+[node name="Head" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xc6yd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5hr7")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qtj8l")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6avkg")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ejxgb")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EntityPreview1/Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="EntityPreview1/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_23ejq")
+
+[node name="Area3D" type="Area3D" parent="EntityPreview1"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="EntityPreview1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602373, 0)
+shape = SubResource("BoxShape3D_oa0g0")
+
+[node name="EntityPreview2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
+
+[node name="Sprite" type="Node3D" parent="EntityPreview2"]
+
+[node name="SubViewport" type="SubViewport" parent="EntityPreview2/Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 96)
+
+[node name="Avatar" type="Node2D" parent="EntityPreview2/Sprite/SubViewport"]
+position = Vector2(16, 32)
+
+[node name="Head" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xc6yd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5hr7")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qtj8l")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6avkg")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ejxgb")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EntityPreview2/Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="EntityPreview2/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_23ejq")
+
+[node name="Area3D" type="Area3D" parent="EntityPreview2"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="EntityPreview2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602373, 0)
+shape = SubResource("BoxShape3D_oa0g0")
+
+[node name="EntityPreview3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="Sprite" type="Node3D" parent="EntityPreview3"]
+
+[node name="SubViewport" type="SubViewport" parent="EntityPreview3/Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 96)
+
+[node name="Avatar" type="Node2D" parent="EntityPreview3/Sprite/SubViewport"]
+position = Vector2(16, 32)
+
+[node name="Head" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xc6yd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5hr7")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qtj8l")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6avkg")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ejxgb")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EntityPreview3/Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="EntityPreview3/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_23ejq")
+
+[node name="Area3D" type="Area3D" parent="EntityPreview3"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="EntityPreview3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602373, 0)
+shape = SubResource("BoxShape3D_oa0g0")
+
+[node name="EntityPreview4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="Sprite" type="Node3D" parent="EntityPreview4"]
+
+[node name="SubViewport" type="SubViewport" parent="EntityPreview4/Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 96)
+
+[node name="Avatar" type="Node2D" parent="EntityPreview4/Sprite/SubViewport"]
+position = Vector2(16, 32)
+
+[node name="Head" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xc6yd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5hr7")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qtj8l")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6avkg")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ejxgb")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EntityPreview4/Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="EntityPreview4/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_23ejq")
+
+[node name="Area3D" type="Area3D" parent="EntityPreview4"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="EntityPreview4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602373, 0)
+shape = SubResource("BoxShape3D_oa0g0")
+
+[node name="EntityPreview5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -1.5)
+
+[node name="Sprite" type="Node3D" parent="EntityPreview5"]
+
+[node name="SubViewport" type="SubViewport" parent="EntityPreview5/Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 96)
+
+[node name="Avatar" type="Node2D" parent="EntityPreview5/Sprite/SubViewport"]
+position = Vector2(16, 32)
+
+[node name="Head" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xc6yd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5hr7")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qtj8l")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6avkg")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ejxgb")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EntityPreview5/Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="EntityPreview5/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_23ejq")
+
+[node name="Area3D" type="Area3D" parent="EntityPreview5"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="EntityPreview5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602373, 0)
+shape = SubResource("BoxShape3D_oa0g0")
+
+[node name="EntityPreview6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+
+[node name="Sprite" type="Node3D" parent="EntityPreview6"]
+
+[node name="SubViewport" type="SubViewport" parent="EntityPreview6/Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(64, 96)
+
+[node name="Avatar" type="Node2D" parent="EntityPreview6/Sprite/SubViewport"]
+position = Vector2(16, 32)
+
+[node name="Head" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("5_jxke0")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_xc6yd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5hr7")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_qtj8l")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6avkg")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ejxgb")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("11_i3w48")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EntityPreview6/Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="EntityPreview6/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_23ejq")
+
+[node name="Area3D" type="Area3D" parent="EntityPreview6"]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="EntityPreview6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602373, 0)
+shape = SubResource("BoxShape3D_oa0g0")
+
+[node name="Camera" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="Camera"]
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866025, 0.5, -0.707107, -0.353553, 0.612372, 11, 10, 11)
+environment = SubResource("Environment_flqsq")
+doppler_tracking = 2
+projection = 1
+current = true
+fov = 37.8493
+size = 5.4

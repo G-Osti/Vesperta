@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://vv2xup7s81qs"]
+
+[ext_resource type="Texture2D" uid="uid://bucr18chcn4v7" path="res://assets/sprites/ícones/Equipamentos/Arco.png" id="1_hhaq1"]
+[ext_resource type="Script" uid="uid://hky7nleycnba" path="res://scripts/ItemData.gd" id="2_0nxiv"]
+
+[resource]
+script = ExtResource("2_0nxiv")
+icon = ExtResource("1_hhaq1")
+color = PackedColorArray(0.42, 0.21392, 0.1512, 1, 0.36, 0.1668, 0.108, 1, 0.3, 0.1528, 0.108, 1, 0.86, 0.86, 0.86, 1, 0.8, 0.8, 0.8, 1, 0.74, 0.74, 0.74, 1, 0.95, 0.0475, 0.0475, 1, 0.0177333, 0.006, 0.05, 1)
+name = "Arco"
+type = "Equipamento"
+subtype1 = "Duas Mãos"
+subtype2 = "Nenhum"
+anim = "Arco"
+description = "Um arco comum."
+PV = 0
+VEL = -1
+CRT = 5
+DAN = Vector2i(4, 2)
+M_CRT = 0.0
+MOV = 0
+AM = 0
+AD = {
+&"calor": 0,
+&"frio": 0,
+&"físico": 0,
+&"geral": 0,
+&"mental": 0,
+&"miasma": 0,
+&"raio": 0
+}
+PRE = 0
+REF = 0
+ALC = 5
+CB = 0
+perks = {}

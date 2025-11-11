@@ -1,0 +1,642 @@
+[gd_scene load_steps=26 format=3 uid="uid://cxrvy7q1lht4r"]
+
+[ext_resource type="Script" uid="uid://ugme1hjivhfg" path="res://scripts/entity.gd" id="1_g4664"]
+[ext_resource type="Texture2D" uid="uid://b7b2abo5uexyw" path="res://assets/sprites/menus/Overlays/EmptyBar.png" id="2_4r1kw"]
+[ext_resource type="Texture2D" uid="uid://do2t42u0pj3a2" path="res://assets/sprites/menus/Overlays/FullBar.png" id="3_kw5fm"]
+[ext_resource type="Theme" uid="uid://ybeppq67fc1h" path="res://recursos/TRES/new_theme.tres" id="3_qe1vl"]
+[ext_resource type="Texture2D" uid="uid://k2jy170miydg" path="res://assets/sprites/menus/Frames/LabelLarge.png" id="4_b21l3"]
+[ext_resource type="Texture2D" uid="uid://33jkldk14jdv" path="res://assets/sprites/Entidades/Personagens/Humanoide.png" id="5_10ubc"]
+[ext_resource type="Texture2D" uid="uid://cx8o4l30eogko" path="res://assets/sprites/Entidades/Personagens/Roupas/Braços/Braços0.png" id="6_dlvgd"]
+[ext_resource type="Texture2D" uid="uid://b8skqwuyg4mxb" path="res://assets/sprites/Entidades/Personagens/Corpos/Humano.png" id="6_vg0iu"]
+[ext_resource type="Texture2D" uid="uid://dm06aq52sv251" path="res://assets/sprites/Entidades/Personagens/Roupas/Tronco/Tronco0.png" id="7_e7n03"]
+[ext_resource type="Texture2D" uid="uid://cx3t30vy48nkx" path="res://assets/sprites/Entidades/Personagens/Roupas/Pernas/Pernas0.png" id="8_67u4q"]
+[ext_resource type="Texture2D" uid="uid://1cctwjixsxsu" path="res://assets/sprites/Entidades/Personagens/Cabelos/Cabelo1.png" id="9_5ya22"]
+[ext_resource type="Texture2D" uid="uid://0n32nvgn1alx" path="res://assets/sprites/Entidades/Personagens/Faces/Face0.png" id="10_5vmap"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8fec"]
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="Animation" id="Animation_i2y2j"]
+resource_name = "Arrow"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(36, 28), Vector2(36, 34)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fq88v"]
+_data = {
+&"Arrow": SubResource("Animation_i2y2j")
+}
+
+[sub_resource type="Animation" id="Animation_3eany"]
+resource_name = "Andar1"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Avatar/Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.382341, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Avatar/Arms:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 12, 10, 14]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Avatar/Torso:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 22, 20, 23]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Avatar/Legs:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [30, 32, 30, 34]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Avatar/Face:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Avatar/Face:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Avatar/Shirt:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 2]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Avatar/Sleeves:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 4]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Avatar/Boots:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 4]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Avatar/Hair:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_yp38g"]
+resource_name = "Andar1"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Avatar/Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.382341, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Avatar/Arms:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [11, 13, 11, 15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Avatar/Torso:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [21, 23, 21, 23]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Avatar/Legs:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [31, 33, 31, 35]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Avatar/Face:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Avatar/Shirt:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 2]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Avatar/Sleeves:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Avatar/Boots:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 5]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Avatar/Hair:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 1, 3]
+}
+
+[sub_resource type="Animation" id="Animation_r41wj"]
+resource_name = "Ataque1"
+
+[sub_resource type="Animation" id="Animation_kxyaj"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_xaps4"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_2vrrs"]
+resource_name = "jump"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.9),
+"transitions": PackedFloat32Array(0.933033, 1.1487),
+"update": 0,
+"values": [Vector3(0.5, 1.5, 0.5), Vector3(1.5, 1, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1.93188, 0.683021, 5.65685),
+"update": 0,
+"values": [Vector3(0, 0.85, 0), Vector3(0, 2, 0), Vector3(0, 0.85, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0hrq3"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 2
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t3628"]
+_data = {
+&"Andar1": SubResource("Animation_3eany"),
+&"Andar2": SubResource("Animation_yp38g"),
+&"Ataque1": SubResource("Animation_r41wj"),
+&"attack": SubResource("Animation_kxyaj"),
+&"defense": SubResource("Animation_xaps4"),
+&"jump": SubResource("Animation_2vrrs"),
+&"walk": SubResource("Animation_0hrq3")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4o14n"]
+viewport_path = NodePath("Sprite/SubViewport")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iw735"]
+radius = 0.263726
+height = 1.0
+
+[node name="Entity" type="Node3D" groups=["entity"]]
+process_priority = 2
+process_physics_priority = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.5, 0.5)
+script = ExtResource("1_g4664")
+
+[node name="Sprite" type="Node3D" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="Sprite"]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(70, 82)
+
+[node name="Overlay" type="Control" parent="Sprite/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+
+[node name="Life" type="TextureRect" parent="Sprite/SubViewport/Overlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+offset_right = 70.0
+offset_bottom = 23.0
+
+[node name="Bar" type="TextureProgressBar" parent="Sprite/SubViewport/Overlay/Life"]
+self_modulate = Color(0.356863, 0.760784, 0.105882, 1)
+layout_mode = 1
+offset_right = 70.0
+offset_bottom = 6.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_4r1kw")
+texture_progress = ExtResource("3_kw5fm")
+
+[node name="Penalty" type="TextureProgressBar" parent="Sprite/SubViewport/Overlay/Life/Bar"]
+self_modulate = Color(0.67451, 0.352941, 0.866667, 1)
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 6.0
+value = 25.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = ExtResource("3_kw5fm")
+
+[node name="Energy" type="TextureRect" parent="Sprite/SubViewport/Overlay"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 16.0
+grow_vertical = 0
+
+[node name="Bar" type="TextureProgressBar" parent="Sprite/SubViewport/Overlay/Energy"]
+self_modulate = Color(1, 0.556863, 0.0196078, 1)
+layout_mode = 1
+offset_right = 70.0
+offset_bottom = 6.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_4r1kw")
+texture_progress = ExtResource("3_kw5fm")
+
+[node name="Penalty" type="TextureProgressBar" parent="Sprite/SubViewport/Overlay/Energy/Bar"]
+self_modulate = Color(0.67451, 0.352941, 0.866667, 1)
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 6.0
+value = 25.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_progress = ExtResource("3_kw5fm")
+
+[node name="Nametag" type="TextureRect" parent="Sprite/SubViewport/Overlay"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_right = 174.0
+offset_bottom = 22.0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_b21l3")
+
+[node name="Value" type="Label" parent="Sprite/SubViewport/Overlay/Nametag"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -23.0
+offset_right = 240.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("3_qe1vl")
+theme_override_font_sizes/font_size = 22
+text = "S.Azul"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="Arrow" type="Sprite2D" parent="Sprite/SubViewport"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(36, 28)
+texture = SubResource("AtlasTexture_d8fec")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/SubViewport/Arrow"]
+libraries = {
+&"": SubResource("AnimationLibrary_fq88v")
+}
+speed_scale = 2.5
+
+[node name="Avatar" type="Node2D" parent="Sprite/SubViewport"]
+position = Vector2(19, 18)
+
+[node name="Head" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vg0iu")
+hframes = 10
+vframes = 4
+
+[node name="Arms" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vg0iu")
+hframes = 10
+vframes = 4
+frame = 10
+
+[node name="Torso" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vg0iu")
+hframes = 10
+vframes = 4
+frame = 20
+
+[node name="Legs" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+modulate = Color(0.960784, 0.568627, 0.505882, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vg0iu")
+hframes = 10
+vframes = 4
+frame = 30
+
+[node name="Sleeves" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+process_priority = 3
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 2
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("6_dlvgd")
+hframes = 10
+
+[node name="Shirt" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+process_priority = 2
+modulate = Color(0.447059, 0.180392, 0.141176, 1)
+z_index = 1
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("7_e7n03")
+hframes = 4
+
+[node name="Boots" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+process_priority = 1
+modulate = Color(0.2, 0.172549, 0.172549, 1)
+position = Vector2(16, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("8_67u4q")
+hframes = 10
+
+[node name="Hair" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+modulate = Color(0.0862745, 0.0862745, 0.0862745, 1)
+z_index = 1
+position = Vector2(16, 30)
+scale = Vector2(2, 2)
+texture = ExtResource("9_5ya22")
+hframes = 4
+
+[node name="Face" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(16, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("10_5vmap")
+hframes = 2
+vframes = 2
+
+[node name="Cape" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 2.24)
+scale = Vector2(2, 2)
+texture = ExtResource("5_10ubc")
+hframes = 10
+vframes = 4
+
+[node name="Hat" type="Sprite2D" parent="Sprite/SubViewport/Avatar"]
+visible = false
+position = Vector2(0.5, 1.9)
+scale = Vector2(2, 2)
+texture = ExtResource("5_10ubc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/SubViewport/Avatar"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_t3628")
+}
+speed_scale = 1.5
+
+[node name="Char" type="Sprite3D" parent="Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+render_priority = 1
+texture = SubResource("ViewportTexture_4o14n")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.377563, 0)
+shape = SubResource("CapsuleShape3D_iw735")
+
+[connection signal="animation_changed" from="Sprite/SubViewport/Avatar/AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
+[connection signal="animation_finished" from="Sprite/SubViewport/Avatar/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

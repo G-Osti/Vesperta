@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3 uid="uid://dmts78gs5ic40"]
+
+[ext_resource type="Texture2D" uid="uid://c3w3cfmcergk6" path="res://assets/sprites/ícones/IconesHabilidadesRunas.png" id="1_hji2o"]
+[ext_resource type="Script" uid="uid://bofguuctih6u8" path="res://scripts/SkillData.gd" id="2_gp1km"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxqso"]
+atlas = ExtResource("1_hji2o")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_gp1km")
+icon = SubResource("AtlasTexture_vxqso")
+name = "Frio"
+description = "Lança um névoa que resfria um alvo criando uma camada de gelo."
+type = ""
+element = ""
+perks = {}
